@@ -13,7 +13,7 @@ function AgeGate() {
 
   const [toHomePage, setToHomePage] = useState(false);
 
-  const [activeAdult, setActiveAdult] = useState("true");
+  const [activeAdult, setActiveAdult] = useState(true);
   function handleChange() {
     setActiveAdult(!activeAdult);
     if (!activeAdult) {
@@ -90,8 +90,11 @@ function AgeGate() {
       </div>
 
       <div className={func()}>
-        <AdultButton activeAdult={activeAdult} handleChange={handleChange()} />
-        <Minorbutton activeMinor={activeMinor} getOut={getOut()} />
+        <AdultButton
+          activeAdult={activeAdult}
+          handleChange={() => handleChange()}
+        />
+        <Minorbutton activeMinor={activeMinor} getOut={() => getOut()} />
       </div>
     </div>
   );
