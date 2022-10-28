@@ -1,10 +1,10 @@
 import "./styles/App.css";
-import HomePage from "./pages/HomePage";
+import AgeGate from "../../frontend/src/pages/AgeGate.jsx";
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
+      <AgeGate />
     </div>
   );
 }
