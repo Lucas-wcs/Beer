@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import AgeGate from "../../frontend/src/pages/AgeGate.jsx";
+import AgeGate from "./pages/AgeGate";
 
 function App() {
   return (
