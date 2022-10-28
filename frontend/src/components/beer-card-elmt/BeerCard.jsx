@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 import "../../styles/beer-card-elmt/BeerCard.css";
 
 import BeerCardDetails from "./BeerCardDetails";

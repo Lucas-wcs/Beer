@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/HomePage.css";
+import BeerCard from "@components/beer-card-elmt/BeerCard";
 import FiltersComponent from "../components/filters-comp/FiltersComponent";
 
 function HomePage() {
@@ -13,7 +14,9 @@ function HomePage() {
         <img src="src/assets/oh-my-brew-icon-dog-ok.png" alt="dog" />
       </div>
       <div className="beerDisplay">
-        <div className="beerCardList">BeerCardList</div>
+        <div className="beerCardList">
+          <BeerCard />
+        </div>
         <div id="illustration">
           <img src="src/assets/oh-my-brew-icon-dog-not-ok.png" alt="dog" />
         </div>
