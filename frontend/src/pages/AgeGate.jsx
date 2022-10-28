@@ -2,7 +2,6 @@ import AdultButton from "@components/GateAge-component/adult-button";
 import Minorbutton from "@components/GateAge-component/minor-button";
 import React, { useState } from "react";
 import "../styles/AgeGate.css";
-import "../styles/AgeGate-button/AgeGate-button.css";
 import HomePage from "./HomePage";
 
 function AgeGate() {

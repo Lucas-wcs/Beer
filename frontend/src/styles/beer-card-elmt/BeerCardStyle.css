@@ -9,16 +9,18 @@
   border-radius: 10px;
   transition: scale 1s ease-in-out;
 }
+
 .beerCardSmall:hover {
   scale: 1.1;
 }
+
 .imgIcon {
   width: 150px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 }
 
 .beerCardDetails {
-  bakground-color: rgb(179, 208, 132);
+  background-color: rgb(179, 208, 132);
   padding: 40px;
   margin: 0 60px;
   display: block;
@@ -37,11 +39,13 @@
   padding: 20px;
   margin: 0px;
 }
+
 .imgAndText {
   display: flex;
   justify-content: space-between;
   /* gap: 40px; */
 }
+
 .imgAndTagLine {
   background-color: rgb(158, 192, 255);
 }
@@ -51,6 +55,7 @@
   width: 250px;
   height: 250px;
 }
+
 .blockText {
   background-color: rgb(255, 134, 134);
   display: block;
@@ -59,17 +64,21 @@
   width: 100%;
   height: auto;
 }
+
 .blockText p {
   text-align: left;
 }
+
 .btn {
   display: inline-block;
   flex-direction: row;
 }
+
 .dateAndAlc {
   display: flex;
   gap: 20px;
 }
+
 .date,
 .alc {
   background-color: #fff;
@@ -78,21 +87,25 @@
   margin: 0;
   border-radius: 20px;
 }
+
 .brewColor {
   background-color: brown;
   width: 50px;
   height: 10px;
 }
+
 .brewDetails {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 h5 {
   display: inline-block;
   margin: 0;
   text-align: left;
 }
+
 .brewColor {
   display: inline-block;
 }
