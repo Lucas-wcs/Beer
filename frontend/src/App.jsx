@@ -1,15 +1,14 @@
-import HomePage from "./pages/HomePage";
 
-import "./App.css";
-import BeerCard from "./components/beer-card-elmt/BeerCard";
+import "./styles/App.css";
+import AgeGate from "./pages/AgeGate";
+
 
 function App() {
   return (
     <div className="App">
-      <HomePage />
-      <p>coucou</p>
 
-      <BeerCard />
+      <AgeGate />
+
     </div>
   );
 }
