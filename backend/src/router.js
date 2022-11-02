@@ -1,13 +1,16 @@
-const express = require("express");
+const router = require("express").Router();
+const data = require("./oh-my-brew.json");
 
-const router = express.Router();
+router.get("/", (req, res) => {
+  res.status(200).send(data);
+});
 
-const itemControllers = require("./controllers/itemControllers");
+router.get("/:id", (req, res) => {
+  res.status(200).send(data.filter((beer) => beer.id === req.params.id));
+});
 
-router.get("/items", itemControllers.browse);
-router.get("/items/:id", itemControllers.read);
-router.put("/items/:id", itemControllers.edit);
-router.post("/items", itemControllers.add);
-router.delete("/items/:id", itemControllers.destroy);
+router.get("/image/:filename", (req, res) => {
+  res.sendFile(`./public/images/${req.params.filename}`, { root: "./" });
+});
 
 module.exports = router;
