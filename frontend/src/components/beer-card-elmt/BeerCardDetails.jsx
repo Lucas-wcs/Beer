@@ -1,5 +1,7 @@
 import React from "react";
-import "../../styles/beer-card-elmt/BeerCardDetails.css";
+
+import "../../styles/beer-card-elmt/BeerCardStyle.css";
+
 import PropTypes from "prop-types";
 
 function BeerCardDetails({ close }) {
