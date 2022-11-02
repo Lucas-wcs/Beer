@@ -1,38 +1,179 @@
-.App {
-  text-align: center;
+:root {
+
+    --background-color-light: #FFF8E3;
+    --background-color-dark: #FFEBAF;
+    --accent-color-1: #FF7E7C;
+    --accent-color-2: #F29F05;
+    --title-color: #27140C;
+    --text-color: #592C1C;
+    --secondary-color-1: #BF5B04;
+    --secondary-color-2: #8C4820;
+    --shadow-card: 4px 4px 20px rgba(242, 159, 5, 0.25);
+    --shadow-button: 4px 4px 20px rgba(191, 91, 4, 0.25);
+    --font-title-family: 'Anton', sans-serif;
+    --font-text-family: 'Cabin', sans-serif;
+    --font-text-weight-bold: 700;
+    --font-text-weight-regular: 400;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html,
+body,
+button,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-title-family);
+    color: var(--title-color);
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+    font-size: 6.875rem;
+    line-height: 8rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+    font-size: 5rem;
+    line-height: 6.125rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+    line-height: 3.625rem;
+}
+
+.tagline {
+    color: var(--accent-color-2);
+}
+
+h4 {
+
+    font-size: 1.25rem;
+    line-height: 2.375rem;
+}
+
+p {
+    font-family: var(--font-text-family);
+    font-weight: var(--font-text-weight-regular);
+    font-size: 1rem;
+    line-height: 1.625rem;
+    color: var(--text-color);
+}
+
+p span {
+    font-weight: var(--font-text-weight-bold);
+}
+
+button {
+    font-family: var(--font-text-family);
+    font-weight: var(--font-text-weight-bold);
+    font-size: 1rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 0.625rem;
+    background-image: url("./assets/oh-my-brew-icon-heart-white.svg");
+    padding: 0.875rem 1.25rem;
+    border-radius: 0.625rem;
+    background-color: var(--accent-color-2);
+
+}
+
+.primary-shadow {
+    box-shadow: var(--shadow-button);
+}
+
+.secondary-shadow {
+    background-color: var(--secondary-color-2);
+    box-shadow: var(--shadow-button);
 }
