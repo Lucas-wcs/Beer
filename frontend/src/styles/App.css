@@ -1,6 +1,221 @@
+:root {
+  --background-color-light: #fff8e3;
+  --background-color-dark: #ffebaf;
+  --accent-color-1: #ff7e7c;
+  --accent-color-2: #f29f05;
+  --secondary-color-1: #bf5b04;
+  --secondary-color-2: #8c4820;
+  --secondary-color-3: #592c1c;
+  --secondary-color-4: #27140c;
+  --shadow-card: 4px 4px 20px rgba(242, 159, 5, 0.25);
+  --shadow-button: 4px 4px 20px rgba(191, 91, 4, 0.25);
+  --font-title-family: "Anton", sans-serif;
+  --font-text-family: "Cabin", sans-serif;
+  --font-text-weight-bold: 700;
+  --font-text-weight-regular: 400;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+button,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+body {
+  padding: (1.25rem, 5vw, 6.25rem);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-title-family);
+  color: var(--secondary-color-4);
+}
+
+h1 {
+  font-size: 6.875rem;
+  line-height: 8rem;
+}
+
+h2 {
+  font-size: 5rem;
+  line-height: 6.125rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+  line-height: 3.625rem;
+}
+
+.taglineWebsite {
+  color: var(--accent-color-2);
+}
+
+.taglineBeer {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: var(--accent-color-2);
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 2.375rem;
+}
+
+p {
+  font-family: var(--font-text-family);
+  font-weight: var(--font-text-weight-regular);
+  font-size: 1rem;
+  line-height: 1.625rem;
+  color: var(--secondary-color-3);
+}
+
+p span {
+  font-weight: var(--font-text-weight-bold);
+}
+
 button {
-    background-color: rgba(242, 159, 5, 1);
-    color: white;
-    border-radius: 4px;
-    border: none;
+  font-family: var(--font-text-family);
+  font-weight: var(--font-text-weight-bold);
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 0.875rem 1.25rem;
+  border-radius: 0.625rem;
+  background-color: var(--accent-color-2);
+}
+
+.primaryShadow {
+  box-shadow: var(--shadow-button);
+}
+
+.secondaryShadow {
+  background-color: var(--secondary-color-2);
+  box-shadow: var(--shadow-button);
+}
+
+button:hover,
+button:active,
+.primaryShadow:hover,
+.primaryShadow:active {
+  background-color: var(--secondary-color-1);
+}
+
+.secondaryShadow:hover,
+.secondaryShadow:active {
+  background-color: var(--secondary-color-3);
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 4.875rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    line-height: 3.625rem;
+  }
+
+  h3 {
+    font-size: 1.875rem;
+    line-height: 3rem;
+  }
+
+  .taglineWebsite {
+    color: var(--accent-color-2);
+  }
+
+  h4 {
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
 }
