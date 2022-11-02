@@ -72,9 +72,9 @@ function AgeGate() {
 
       <h1 className={!activeMinor ? "ageGate-title-off" : "ageGate-title-on"}>
         Are you{" "}
-        <h1 className={activeAdult && "sure"}>
-          <h1 className="sure2"> sure </h1>you're{" "}
-        </h1>
+        <span className={activeAdult && "sure"}>
+          <span className="sure2"> sure </span>you're{" "}
+        </span>
         over 18 years old?
       </h1>
 
