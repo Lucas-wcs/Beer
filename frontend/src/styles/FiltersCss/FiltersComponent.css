@@ -9,6 +9,10 @@
   width: 70%;
 }
 
+.alc-filter {
+  width: 70%;
+}
+
 .select {
   display: flex;
   justify-content: space-between;
