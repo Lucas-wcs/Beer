@@ -1,12 +1,14 @@
 import React from "react";
 import "../styles/HomePage.css";
+
+import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
 import FiltersComponent from "../components/filters-comp/FiltersComponent";
 
 function HomePage() {
   return (
-    <div>
-      <section className="header">header</section>
+    <div id="body">
+      <Header />
       <div className="main">
         <h2>Oh my brew!</h2>
         <h3>Let the dogs out!</h3>
