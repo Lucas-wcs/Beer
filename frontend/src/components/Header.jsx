@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className="NavBar">
       <div className="NavBarElements">
-        <a href="#" className="NavBarLogo">
+        <a href="/#" className="NavBarLogo">
           <img src="src/assets/oh-my-brew-logo.svg" alt="Oh My Brew Logo" />
         </a>
         <a
