@@ -40,7 +40,11 @@ function HomePage() {
       <div className="main">
         <h2>Oh my brew!</h2>
         <h3>Let the dogs out!</h3>
-        <FiltersComponent colorInput={colorInput} alcInput={alcInput} bitterInput={bitterInput} />
+        <FiltersComponent
+          colorInput={colorInput}
+          alcInput={alcInput}
+          bitterInput={bitterInput}
+        />
         <img src="src/assets/oh-my-brew-icon-dog-ok.png" alt="dog" />
       </div>
       <div className="beerDisplay">
@@ -70,8 +74,10 @@ function HomePage() {
                 if (ele.ibu > minBitterValue) return ele;
               }
               if (maxBitterValue <= 100) {
-                if (ele.ibu >= minBitterValue && ele.ibu <= maxBitterValue) return ele;
+                if (ele.ibu >= minBitterValue && ele.ibu <= maxBitterValue)
+                  return ele;
               }
+              return null;
             })
             .map((element) => (
               <BeerCard

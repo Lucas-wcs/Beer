@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/FiltersCss/FiltersComponent.css";
+import PropTypes from "prop-types";
 import ColorFilter from "./ColorFilter";
-import PropTypes from 'prop-types';
 import AlcFilter from "./AlcFilter";
 import BitterFilter from "./BitterFilter";
 
