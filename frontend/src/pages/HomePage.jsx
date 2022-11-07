@@ -27,13 +27,20 @@ function HomePage() {
     setMaxAlcValue(el.maxValue);
   };
 
+  const [minBitterValue, setMinBitterValue] = useState(10);
+  const [maxBitterValue, setMaxBitterValue] = useState(50);
+  const bitterInput = (ele) => {
+    setMinBitterValue(ele.minValue);
+    setMaxBitterValue(ele.maxValue);
+  };
+
   return (
     <div>
       <section className="header">header</section>
       <div className="main">
         <h2>Oh my brew!</h2>
         <h3>Let the dogs out!</h3>
-        <FiltersComponent colorInput={colorInput} alcInput={alcInput} />
+        <FiltersComponent colorInput={colorInput} alcInput={alcInput} bitterInput={bitterInput} />
         <img src="src/assets/oh-my-brew-icon-dog-ok.png" alt="dog" />
       </div>
       <div className="beerDisplay">
@@ -41,16 +48,29 @@ function HomePage() {
           {beerArray
             .filter((ele) => {
               if (maxAlcValue >= 11) {
-                return ele.abv >= minAlcValue;
-              } else if (maxAlcValue <= 10) {
-                return ele.abv >= minAlcValue && ele.abv <= maxAlcValue;
+                if (ele.abv >= minAlcValue) return ele;
               }
+              if (maxAlcValue <= 10) {
+                if (ele.abv >= minAlcValue && ele.abv <= maxAlcValue)
+                  return ele;
+              }
+              return null;
             })
             .filter((el) => {
               if (maxColValue >= 45) {
-                return el.srm >= minColValue;
-              } else if (maxColValue <= 40) {
-                return el.srm >= minColValue && el.srm <= maxColValue;
+                if (el.srm > minColValue) return el;
+              }
+              if (maxColValue <= 40) {
+                if (el.srm >= minColValue && el.srm <= maxColValue) return el;
+              }
+              return null;
+            })
+            .filter((ele) => {
+              if (maxBitterValue >= 110) {
+                if (ele.ibu > minBitterValue) return ele;
+              }
+              if (maxBitterValue <= 100) {
+                if (ele.ibu >= minBitterValue && ele.ibu <= maxBitterValue) return ele;
               }
             })
             .map((element) => (

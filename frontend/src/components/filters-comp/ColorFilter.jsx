@@ -10,8 +10,8 @@ function ColorFilter({ colorChange, maxValue, minValue }) {
         min={0}
         max={45}
         step={5}
-        minValue={minValue}
-        maxValue={maxValue}
+        minColValue={minValue}
+        maxColValue={maxValue}
         ruler
         labels={[0, 5, 10, 15, 20, 25, 30, 35, 40, '40+']}
         stepOnly
@@ -25,8 +25,8 @@ function ColorFilter({ colorChange, maxValue, minValue }) {
 
 ColorFilter.propTypes = {
   colorChange: PropTypes.func.isRequired,
-  minValue: PropTypes.func.isRequired,
-  maxValue: PropTypes.func.isRequired,
+  minColValue: PropTypes.func.isRequired,
+  maxColSValue: PropTypes.func.isRequired,
 };
 
 export default ColorFilter;
