@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 function AlcFilter({ alcChange, maxAlcValue, minAlcValue }) {
   return (
-    <div className="alc-filter">
+    <div className="alc-filter alcool">
       <MultiRangeSlider
         min={0}
         max={11}
