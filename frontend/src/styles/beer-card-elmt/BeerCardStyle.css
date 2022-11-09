@@ -1,3 +1,7 @@
+.flipcard {
+  position: relative;
+}
+
 .beerCardSmall {
   background-color: cadetblue;
   display: inline-block;
@@ -19,7 +23,7 @@
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 }
 
-.beerCardDetails {
+.beerCardDetailsFront {
   background-color: rgb(179, 208, 132);
   padding: 40px;
   margin: 0 60px;
@@ -27,8 +31,8 @@
   flex-direction: column;
   position: absolute;
   z-index: 5;
-  height: 400px;
-  width: 800px;
+  width: 900px;
+  height: 600px;
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 }
@@ -50,7 +54,7 @@
   background-color: rgb(158, 192, 255);
 }
 
-.beerCardDetails .img {
+.beerCardDetailsFront .img {
   background-color: darkolivegreen;
   width: 250px;
   height: 250px;
@@ -108,4 +112,32 @@ h5 {
 
 .brewColor {
   display: inline-block;
+}
+
+/*CSS Thomas*/
+
+.card-is-flipped {
+  background-color: blue;
+  padding: 40px;
+  margin: 0 60px;
+  display: block;
+  flex-direction: column;
+  position: absolute;
+  z-index: 5;
+  width: 900px;
+  height: 600px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+.card-is-flipped .img {
+  background-color: darkolivegreen;
+  width: 250px;
+  height: 250px;
+}
+
+.marg {
+  background-color: red;
+  width: 100%;
+  height: 100%;
 }
