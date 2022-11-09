@@ -5,16 +5,38 @@
   flex-direction: column;
 }
 
+.deg-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+}
+
+.bit-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.col-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
 .color-filter {
-  width: 70%;
+  width: 60%;
 }
 
 .alc-filter {
-  width: 70%;
+  width: 60%;
 }
 
 .bitter-filter {
-  width: 70%;
+  width: 60%;
 }
 
 .select {

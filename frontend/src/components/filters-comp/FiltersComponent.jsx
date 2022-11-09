@@ -8,11 +8,18 @@ import BitterFilter from "./BitterFilter";
 function FiltersComponent({ colorInput, alcInput, bitterInput }) {
   return (
     <div className="filtersComponent">
-      <AlcFilter alcChange={(el) => alcInput(el)} />
-
-      <ColorFilter colorChange={(e) => colorInput(e)} />
-
-      <BitterFilter bitterChange={(ele) => bitterInput(ele)} />
+      <div className="deg-container">
+        <h4>Degree</h4>
+        <AlcFilter alcChange={(el) => alcInput(el)} />
+      </div>
+      <div className="bit-container">
+        <h4>Bitter</h4>
+        <BitterFilter bitterChange={(ele) => bitterInput(ele)} />
+      </div>
+      <div className="col-container">
+        <h4>Color</h4>
+        <ColorFilter colorChange={(e) => colorInput(e)} />
+      </div>
 
       <div className="select">
         <button type="button">Apply</button>

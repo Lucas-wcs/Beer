@@ -1,13 +1,30 @@
+:root {
+  --background-color-light: #fff8e3;
+  --background-color-dark: #ffebaf;
+  --accent-color-1: #ff7e7c;
+  --accent-color-2: #f29f05;
+  --secondary-color-1: #bf5b04;
+  --secondary-color-2: #8c4820;
+  --secondary-color-3: #592c1c;
+  --secondary-color-4: #27140c;
+  --shadow-card: 4px 4px 20px rgba(242, 159, 5, 0.25);
+  --shadow-button: 4px 4px 20px rgba(191, 91, 4, 0.25);
+  --font-title-family: "Anton", sans-serif;
+  --font-text-family: "Cabin", sans-serif;
+  --font-text-weight-bold: 700;
+  --font-text-weight-regular: 400;
+}
+
 body {
   box-sizing: border-box;
 }
 
 .header {
-  background-color: rgb(255, 205, 213);
+  background-color: var(--background-color-dark);
 }
 
 .main {
-  background-color: antiquewhite;
+  background-color: var(--background-color-dark);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -17,6 +34,11 @@ body {
   margin-top: -5rem;
   align-self: flex-end;
   margin-right: 3rem;
+}
+
+main,
+h3 {
+  color: var(--accent-color-2);
 }
 
 .beerDisplay {
