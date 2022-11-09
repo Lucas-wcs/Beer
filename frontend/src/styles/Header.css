@@ -74,19 +74,15 @@ a {
   height: auto;
 }
 
-
 /* =================== Mobile ==================== */
 
-
 @media screen and (max-width: 900px) {
-
   .BrewdogWebsiteLink {
     display: none;
   }
 }
 
 @media (min-width: 320px) and (max-width: 600px) {
-
   .NavBar {
     height: 11rem;
   }
@@ -123,5 +119,4 @@ a {
       transform: translateY(0rem);
     }
   }
-
 }

@@ -5,7 +5,7 @@ import ColorFilter from "./ColorFilter";
 import AlcFilter from "./AlcFilter";
 import BitterFilter from "./BitterFilter";
 
-function FiltersComponent({ colorInput, alcInput, bitterInput }) {
+function FiltersComponent({ colorInput, alcInput, bitterInput, resetEvent }) {
   return (
     <div className="filtersComponent">
       <div className="deg-container">
@@ -22,7 +22,9 @@ function FiltersComponent({ colorInput, alcInput, bitterInput }) {
       </div>
 
       <div className="select">
-        <button type="button">Clear filters</button>
+        <button type="button" onClick={(ev) => resetEvent(ev)}>
+          Clear filters
+        </button>
       </div>
 
       <div className="heart">
@@ -48,6 +50,7 @@ FiltersComponent.propTypes = {
   colorInput: PropTypes.func.isRequired,
   alcInput: PropTypes.func.isRequired,
   bitterInput: PropTypes.func.isRequired,
+  resetEvent: PropTypes.func.isRequired,
 };
 
 export default FiltersComponent;
