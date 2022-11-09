@@ -1,12 +1,17 @@
 import React from "react";
 import "../../styles/FiltersCss/FiltersComponent.css";
+import PropTypes from "prop-types";
+import ColorFilter from "./ColorFilter";
 
-function FiltersComponent() {
+function FiltersComponent({ handleInput }) {
   return (
     <div className="filtersComponent">
       <p>Filtre 1</p>
-      <p>Filtre 2</p>
+
+      <ColorFilter minMaxChange={(e) => handleInput(e)} />
+
       <p>Filtre 3</p>
+
       <div className="select">
         <button type="button">Apply</button>
         <p>Clear filters &nbsp;</p>
@@ -30,5 +35,9 @@ function FiltersComponent() {
     </div>
   );
 }
+
+FiltersComponent.propTypes = {
+  handleInput: PropTypes.func.isRequired,
+};
 
 export default FiltersComponent;

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 import "../../styles/beer-card-elmt/BeerCard.css";
-
+import PropTypes from "prop-types";
 import BeerCardDetails from "./BeerCardDetails";
 
-function BeerCard() {
+function BeerCard({ name, imageUrl, ibu, firstBrewed, abv, srm, description }) {
   const [click, setClick] = useState(false);
 
   const close = () => setClick(false);
@@ -24,18 +24,32 @@ function BeerCard() {
         tabIndex={0}
         role="button"
       >
-        <img
-          className="imgIcon"
-          src="https://static.unepetitemousse.fr/produits/bieres/brewdog/brewdog-PunkIPA-2021_1800w.jpg"
-          alt=""
-        />
-        <h4>
-          India Session Lager - <br /> Prototype Challenge
-        </h4>
+        <img className="imgIcon" src={imageUrl} alt="" />
+        <h4>{name}</h4>
       </div>
-      {click === true ? <BeerCardDetails close={close} /> : null}
+      {click === true ? (
+        <BeerCardDetails
+          ibu={ibu}
+          firstBrewed={firstBrewed}
+          abv={abv}
+          srm={srm}
+          imageUrl={imageUrl}
+          description={description}
+          close={close}
+        />
+      ) : null}
     </>
   );
 }
+
+BeerCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  ibu: PropTypes.number.isRequired,
+  firstBrewed: PropTypes.string.isRequired,
+  abv: PropTypes.number.isRequired,
+  srm: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 export default BeerCard;
