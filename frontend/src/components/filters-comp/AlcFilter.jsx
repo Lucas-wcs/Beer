@@ -4,7 +4,6 @@ import "../../styles/FiltersCss/Filters.css";
 import PropTypes from "prop-types";
 
 function AlcFilter({ alcChange, maxAlcValue, minAlcValue }) {
-
   return (
     <div className="alc-filter alcool">
       <MultiRangeSlider

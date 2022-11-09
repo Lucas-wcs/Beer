@@ -43,25 +43,24 @@ function HomePage() {
     setMaxBitterValue(110);
     setMinColValue(0);
     setMaxColValue(45);
-
   };
 
-  let alc = {
+  const alc = {
     min: minAlcValue,
     max: maxAlcValue,
-    callback: alcInput
+    callback: alcInput,
   };
 
-  let bit = {
+  const bit = {
     min: minBitterValue,
     max: maxBitterValue,
-    callback: bitterInput
+    callback: bitterInput,
   };
 
-  let col = {
+  const col = {
     min: minColValue,
     max: maxColValue,
-    callback: colorInput
+    callback: colorInput,
   };
 
   return (
