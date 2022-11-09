@@ -126,7 +126,7 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 35px 0 35px 0;
+  margin: 35px 5% 35px 5%;
 }
 
 .ageGate-title-off {
@@ -141,4 +141,8 @@ h1 {
   padding-left: 15px;
   padding-right: 0px;
   color: rgba(242, 159, 5, 1);
+}
+
+.years {
+  text-align: center;
 }

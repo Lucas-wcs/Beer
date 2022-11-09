@@ -3,7 +3,6 @@
   display: inline-block;
   padding: 20px;
   margin: 60px 0;
-  position: absolute;
   z-index: 1;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -15,7 +14,8 @@
 }
 
 .imgIcon {
-  width: 150px;
+  width: auto;
+  height: 200px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 }
 

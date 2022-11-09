@@ -4,40 +4,39 @@ import "../../styles/beer-card-elmt/BeerCardStyle.css";
 
 import PropTypes from "prop-types";
 
-function BeerCardDetails({ close }) {
+function BeerCardDetails({
+  name,
+  imageUrl,
+  ibu,
+  firstBrewed,
+  abv,
+  srm,
+  description,
+  close,
+}) {
   return (
     <div className="beerCardDetails">
       <div className="marg">
-        <h2 className="title">India Session Lager - Prototype Challenge</h2>
+        <h2 className="title">{name}</h2>
         <div className="imgAndText">
           <div className="imgAndTagLine">
-            <img
-              className="img"
-              src="https://static.unepetitemousse.fr/produits/bieres/brewdog/brewdog-PunkIPA-2021_1800w.jpg"
-              alt=""
-            />
-            <h4>Refreshing Hop Fix</h4>
+            <img className="img" src={imageUrl} alt="" />
+            <h4>tagline</h4>
           </div>
           <div className="blockText">
             <div className="dateAndAlc">
-              <h5 className="date">First brewed: 11/1/2015</h5>
-              <h5 className="alc">Alc: 4,4%</h5>
+              <h5 className="date">First brewed: {firstBrewed}</h5>
+              <h5 className="alc">Alc: {abv}</h5>
             </div>
             <div className="brewDetails">
               <h5>
-                Bitterness: o o o o o IBU 23 (International Bitterness Unit)
+                Bitterness: o o o o o IBU {ibu} (International Bitterness Unit)
               </h5>
               <h5>
-                Color: <div className="brewColor" /> EBC 20 (European Brewery
-                Convention)
+                Color: <div className="brewColor" /> SRM {srm}
               </h5>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Necessitatibus rem iste repudiandae atque dolorem deserunt itaque
-              vero. Quia quis illum beatae dolore distinctio mollitia eos dolor
-              laboriosam tempora!
-            </p>
+            <p>{description}</p>
             <button className="btn" type="button">
               Add to Favorite{" "}
             </button>
@@ -58,6 +57,13 @@ function BeerCardDetails({ close }) {
 
 BeerCardDetails.propTypes = {
   close: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  ibu: PropTypes.number.isRequired,
+  firstBrewed: PropTypes.string.isRequired,
+  abv: PropTypes.number.isRequired,
+  srm: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default BeerCardDetails;

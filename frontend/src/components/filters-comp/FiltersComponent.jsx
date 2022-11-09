@@ -1,12 +1,26 @@
 import React from "react";
 import "../../styles/FiltersCss/FiltersComponent.css";
+import PropTypes from "prop-types";
+import ColorFilter from "./ColorFilter";
+import AlcFilter from "./AlcFilter";
+import BitterFilter from "./BitterFilter";
 
-function FiltersComponent() {
+function FiltersComponent({ colorInput, alcInput, bitterInput }) {
   return (
     <div className="filtersComponent">
-      <p>Filtre 1</p>
-      <p>Filtre 2</p>
-      <p>Filtre 3</p>
+      <div className="deg-container">
+        <h4>Degree</h4>
+        <AlcFilter alcChange={(el) => alcInput(el)} />
+      </div>
+      <div className="bit-container">
+        <h4>Bitter</h4>
+        <BitterFilter bitterChange={(ele) => bitterInput(ele)} />
+      </div>
+      <div className="col-container">
+        <h4>Color</h4>
+        <ColorFilter colorChange={(e) => colorInput(e)} />
+      </div>
+
       <div className="select">
         <button type="button">Apply</button>
         <p>Clear filters &nbsp;</p>
@@ -30,5 +44,11 @@ function FiltersComponent() {
     </div>
   );
 }
+
+FiltersComponent.propTypes = {
+  colorInput: PropTypes.func.isRequired,
+  alcInput: PropTypes.func.isRequired,
+  bitterInput: PropTypes.func.isRequired,
+};
 
 export default FiltersComponent;
