@@ -12,7 +12,7 @@ function BitterFilter({ bitterChange, maxBitterValue, minBitterValue }) {
         step={10}
         minValue={minBitterValue}
         maxValue={maxBitterValue}
-        labels={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, "100+"]}
+        labels={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, "+"]}
         stepOnly
         onInput={(elem) => {
           bitterChange(elem);
