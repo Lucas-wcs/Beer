@@ -1,6 +1,6 @@
 import React from "react";
 import MultiRangeSlider from "multi-range-slider-react";
-import "../../styles/FiltersCss/ColorFilter.css";
+import "../../styles/FiltersCss/Filters.css";
 import PropTypes from "prop-types";
 
 function ColorFilter({ colorChange, maxColValue, minColValue }) {
@@ -10,8 +10,8 @@ function ColorFilter({ colorChange, maxColValue, minColValue }) {
         min={0}
         max={45}
         step={5}
-        minValue={minColValue}
-        maxValue={maxColValue}
+        minValue={minColValue || 0}
+        maxValue={maxColValue || 45}
         ruler
         labels={[0, 5, 10, 15, 20, 25, 30, 35, 40, "40+"]}
         stepOnly
