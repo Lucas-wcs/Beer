@@ -11,7 +11,7 @@ function Header() {
         <a
           href="https://www.brewdog.com/uk/diy-dog"
           target="_blank"
-          className="BrewdogWebsiteLink"
+          className="BrewdogWebsiteLinkHeader"
           rel="noreferrer"
         >
           <img

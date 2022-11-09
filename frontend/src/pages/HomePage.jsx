@@ -4,6 +4,7 @@ import "../styles/HomePage.css";
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
 import FiltersComponent from "../components/filters-comp/FiltersComponent";
+import Footer from "@components/Footer";
 
 function HomePage() {
   return (
@@ -19,11 +20,8 @@ function HomePage() {
         <div className="beerCardList">
           <BeerCard />
         </div>
-        <div id="illustration">
-          <img src="src/assets/oh-my-brew-icon-dog-not-ok.png" alt="dog" />
-        </div>
       </div>
-      <section className="footer">footer</section>
+      <Footer />
     </div>
   );
 }

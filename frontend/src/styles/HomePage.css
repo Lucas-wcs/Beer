@@ -3,11 +3,11 @@ body {
 }
 
 .header {
-  background-color: rgb(255, 205, 213);
+  background-color: var(--background-color-dark);
 }
 
 .main {
-  background-color: antiquewhite;
+  background-color: var(--background-color-dark);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -23,14 +23,9 @@ body {
   display: flex;
   align-content: center;
   flex-direction: column;
-  background-color: rgb(243, 243, 198);
+  background-color: var(--background-color-light);
   height: 60vh;
   padding: 3rem 3rem 0 3rem;
-}
-
-#illustration {
-  display: flex;
-  justify-content: flex-end;
 }
 
 .beerCardList {
@@ -39,8 +34,4 @@ body {
   border: 1px solid;
   width: 100%;
   margin: 0 auto 15px auto;
-}
-
-.footer {
-  background-color: rgb(255, 205, 213);
 }
