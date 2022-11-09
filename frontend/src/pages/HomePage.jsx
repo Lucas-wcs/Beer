@@ -47,7 +47,7 @@ function HomePage() {
           alcInput={alcInput}
           bitterInput={bitterInput}
         />
-        <img src="src/assets/oh-my-brew-icon-dog-ok.png" alt="dog" />
+        <img className="dog" src="src/assets/oh-my-brew-icon-dog-ok.png" alt="dog" />
       </div>
       <div className="beerDisplay">
         <div className="beerCardList">

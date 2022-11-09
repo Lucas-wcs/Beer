@@ -146,3 +146,7 @@ h1 {
 .years {
   text-align: center;
 }
+
+/* ==========================media mobile=====================================*/
+
+@media (min-width: 320px) and (max-width: 600px) {}

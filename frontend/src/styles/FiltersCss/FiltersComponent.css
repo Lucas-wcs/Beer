@@ -41,18 +41,77 @@
 
 .select {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 1rem 0 1rem 0;
   width: 30%;
 }
 
 .select button {
-  border-radius: 10%;
-  width: 5rem;
+  border-radius: 10px;
+  width: 8rem;
 }
 
 .heart {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* ==========================media mobile=====================================*/
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .filtersComponent {
+    min-width: 320px;
+  }
+
+  .deg-container {
+    min-width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .bit-container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .col-container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .color-filter {
+    width: 100%;
+  }
+
+  .alc-filter {
+    width: 100%;
+  }
+
+  .bitter-filter {
+    width: 100%;
+  }
+
+  .select {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+    width: 40%;
+  }
+
+  .select button {
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+  }
+
 }

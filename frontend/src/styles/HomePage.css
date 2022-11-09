@@ -66,3 +66,11 @@ h3 {
 .footer {
   background-color: rgb(255, 205, 213);
 }
+
+/* ==========================media mobile=====================================*/
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .dog {
+    display: none;
+  }
+}

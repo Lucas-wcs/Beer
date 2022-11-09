@@ -224,3 +224,11 @@
 .multi-range-slider.zero-ranage-margin .thumb-right {
   left: 8px;
 }
+
+/* ==========================media mobile=====================================*/
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .multi-range-slider {
+    padding: 5px 10px 20px 10px;
+  }
+}

@@ -22,8 +22,7 @@ function FiltersComponent({ colorInput, alcInput, bitterInput }) {
       </div>
 
       <div className="select">
-        <button type="button">Apply</button>
-        <p>Clear filters &nbsp;</p>
+        <button type="button">Clear filters</button>
       </div>
 
       <div className="heart">
