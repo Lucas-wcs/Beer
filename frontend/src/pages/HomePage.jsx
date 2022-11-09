@@ -37,12 +37,31 @@ function HomePage() {
   };
 
   const clearFilter = () => {
-    setMinAlcValue(null);
-    setMaxAlcValue(null);
+    setMinAlcValue(0);
+    setMaxAlcValue(11);
     setMinBitterValue(0);
     setMaxBitterValue(110);
     setMinColValue(0);
     setMaxColValue(45);
+
+  };
+
+  let alc = {
+    min: minAlcValue,
+    max: maxAlcValue,
+    callback: alcInput
+  };
+
+  let bit = {
+    min: minBitterValue,
+    max: maxBitterValue,
+    callback: bitterInput
+  };
+
+  let col = {
+    min: minColValue,
+    max: maxColValue,
+    callback: colorInput
   };
 
   return (
@@ -50,11 +69,11 @@ function HomePage() {
       <Header />
       <div className="main">
         <h2>Oh my brew!</h2>
-        <h3>Let the dogs out!</h3>
+        <h3 className="taglineWebsite">Let the dogs out!</h3>
         <FiltersComponent
-          colorInput={colorInput}
-          alcInput={alcInput}
-          bitterInput={bitterInput}
+          col={col}
+          alc={alc}
+          bit={bit}
           resetEvent={(ev) => clearFilter(ev)}
         />
         <img

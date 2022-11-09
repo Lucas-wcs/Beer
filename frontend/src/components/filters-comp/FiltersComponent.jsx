@@ -5,26 +5,27 @@ import ColorFilter from "./ColorFilter";
 import AlcFilter from "./AlcFilter";
 import BitterFilter from "./BitterFilter";
 
-function FiltersComponent({ colorInput, alcInput, bitterInput, resetEvent }) {
+function FiltersComponent({ col, alc, bit, resetEvent }) {
   return (
     <div className="filtersComponent">
       <div className="deg-container">
         <h4>Degree</h4>
-        <AlcFilter alcChange={(el) => alcInput(el)} />
+        <AlcFilter minAlcValue={alc.min} maxAlcValue={alc.max} alcChange={(el) => alc.callback(el)} />
       </div>
       <div className="bit-container">
         <h4>Bitter</h4>
-        <BitterFilter bitterChange={(ele) => bitterInput(ele)} />
+        <BitterFilter minBitterValue={bit.min} maxBitterValue={bit.max} bitterChange={(ele) => bit.callback(ele)} />
       </div>
       <div className="col-container">
         <h4>Color</h4>
-        <ColorFilter colorChange={(e) => colorInput(e)} />
+        <ColorFilter minColValue={col.min} maxColValue={col.max} colorChange={(e) => col.callback(e)} />
       </div>
 
       <div className="select">
         <button type="button" onClick={(ev) => resetEvent(ev)}>
           Clear filters
         </button>
+        <div className="popupButton">?</div>
       </div>
 
       <div className="heart">
