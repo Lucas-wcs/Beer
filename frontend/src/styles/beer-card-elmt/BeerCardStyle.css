@@ -1,10 +1,29 @@
+:root {
+  --background-color-light: #fff8e3;
+  --background-color-dark: #ffebaf;
+  --accent-color-1: #ff7e7c;
+  --accent-color-2: #f29f05;
+  --secondary-color-1: #bf5b04;
+  --secondary-color-2: #8c4820;
+  --secondary-color-3: #592c1c;
+  --secondary-color-4: #27140c;
+  --shadow-card: 4px 4px 20px rgba(242, 159, 5, 0.25);
+  --shadow-button: 4px 4px 20px rgba(191, 91, 4, 0.25);
+  --font-title-family: "Anton", sans-serif;
+  --font-text-family: "Cabin", sans-serif;
+  --font-text-weight-bold: 700;
+  --font-text-weight-regular: 400;
+}
+
 .beerCardSmall {
-  background-color: cadetblue;
+  background-color: white;
   display: inline-block;
-  padding: 20px;
-  margin: 60px 0;
+  width: 280px;
+  height: 380px;
+  padding: 30px;
+  margin: 0 20px 60px 20px;
   z-index: 1;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-card);
   border-radius: 10px;
   transition: scale 1s ease-in-out;
 }
@@ -13,10 +32,31 @@
   scale: 1.1;
 }
 
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardContainer,
+h4 {
+  text-align: center;
+}
+
+.cardContainer,
+.heartCard {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+
 .imgIcon {
   width: auto;
+  width: 210px;
   height: 200px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 
 .beerCardDetails {
@@ -30,7 +70,6 @@
   height: 400px;
   width: 800px;
   border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 }
 
 .title {

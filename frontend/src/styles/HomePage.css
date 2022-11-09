@@ -40,8 +40,8 @@ body {
   display: flex;
   align-content: center;
   flex-direction: column;
-  background-color: rgb(243, 243, 198);
-  height: 60vh;
+  background-color: var(--background-color-light);
+  height: auto;
   padding: 3rem 3rem 0 3rem;
 }
 
@@ -51,11 +51,10 @@ body {
 }
 
 .beerCardList {
-  background-color: lightblue;
+  background-color: var(--background-color-light);
   height: auto;
-  border: 1px solid;
   width: 100%;
-  margin: 0 auto 15px auto;
+  margin: 0 auto 0 auto;
 }
 
 .footer {
