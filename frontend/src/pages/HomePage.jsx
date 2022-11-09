@@ -3,8 +3,8 @@ import "../styles/HomePage.css";
 
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
-import FiltersComponent from "../components/filters-comp/FiltersComponent";
 import Footer from "@components/Footer";
+import FiltersComponent from "../components/filters-comp/FiltersComponent";
 
 function HomePage() {
   return (
