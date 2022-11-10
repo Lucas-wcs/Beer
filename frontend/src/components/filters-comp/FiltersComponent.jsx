@@ -1,15 +1,45 @@
 import React from "react";
 import "../../styles/FiltersCss/FiltersComponent.css";
+import PropTypes from "prop-types";
+import ColorFilter from "./ColorFilter";
+import AlcFilter from "./AlcFilter";
+import BitterFilter from "./BitterFilter";
 
-function FiltersComponent() {
+function FiltersComponent({ col, alc, bit, resetEvent }) {
   return (
     <div className="filtersComponent">
-      <p>Filtre 1</p>
-      <p>Filtre 2</p>
-      <p>Filtre 3</p>
+      <div className="deg-container">
+        <h4>Degree</h4>
+        <AlcFilter
+          minAlcValue={alc.min}
+          maxAlcValue={alc.max}
+          alcChange={(el) => alc.callback(el)}
+        />
+      </div>
+      <div className="bit-container">
+        <h4>Bitter</h4>
+        <BitterFilter
+          minBitterValue={bit.min}
+          maxBitterValue={bit.max}
+          bitterChange={(ele) => bit.callback(ele)}
+        />
+      </div>
+      <div className="col-container">
+        <h4>Color</h4>
+        <ColorFilter
+          minColValue={col.min}
+          maxColValue={col.max}
+          colorChange={(e) => col.callback(e)}
+        />
+      </div>
+
       <div className="select">
-        <button type="button">Apply</button>
-        <p>Clear filters &nbsp;</p>
+        <button type="button" onClick={(ev) => resetEvent(ev)}>
+          Clear filters
+        </button>
+        <div className="popupButton">
+          <span>?</span>
+        </div>
       </div>
 
       <div className="heart">
@@ -30,5 +60,12 @@ function FiltersComponent() {
     </div>
   );
 }
+
+FiltersComponent.propTypes = {
+  col: PropTypes.func.isRequired,
+  alc: PropTypes.func.isRequired,
+  bit: PropTypes.func.isRequired,
+  resetEvent: PropTypes.func.isRequired,
+};
 
 export default FiltersComponent;

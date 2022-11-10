@@ -4,93 +4,21 @@ import "../../styles/beer-card-elmt/BeerCardStyle.css";
 
 import PropTypes from "prop-types";
 
-function BeerCardDetails({ close }) {
+function BeerCardDetails({
+  name,
+  imageUrl,
+  ibu,
+  firstBrewed,
+  abv,
+  srm,
+  description,
+  close,
+}) {
   const [back, setBack] = useState(true);
 
   const handleBack = () => {
     setBack(!back);
   };
-
-  /* return (
-    <div>
-      {back ? (
-        <div className="beerCardDetails">
-          <div className="marg">
-            <h3 className="title">India Session Lager - Prototype Challenge</h3>
-            <div className="imgAndText">
-              <div className="imgAndTagLine">
-                <img
-                  className="img"
-                  src="https://static.unepetitemousse.fr/produits/bieres/brewdog/brewdog-PunkIPA-2021_1800w.jpg"
-                  alt=""
-                />
-                <h4 className="taglineBeer">Refreshing Hop Fix</h4>
-              </div>
-              <div className="blockText">
-                <div className="dateAndAlc">
-                  <p className="date">First brewed: 11/1/2015</p>
-                  <p className="alc">Alc: 4,4%</p>
-                </div>
-                <div className="brewDetails">
-                  <p>
-                  <span>Bitterness:</span> o o o o o IBU 23 (International Bitterness Unit)
-                  </p>
-                  <p>
-                  <span>Color:</span> <div className="brewColor" /> EBC 20 (European
-                    Brewery Convention)
-                  </p>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Necessitatibus rem iste repudiandae atque dolorem deserunt
-                  itaque vero. Quia quis illum beatae dolore distinctio mollitia
-                  eos dolor laboriosam tempora!
-                </p>
-                <button className="btn" type="button">
-                  Add to Favorite{" "}
-                </button>
-              </div>
-            </div>
-            <div className="buttonsFlecheCroix">
-              <button onClick={close} className="btnCroix" type="button">
-                X
-              </button>
-              <button onClick={handleBack} className="btnFleche" type="button">
-                --{">"}
-              </button>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div className="card-is-flipped">
-          <div className="recipe">
-              <div className="imageRecipe">
-              <img src="src/assets/oh-my-brew-icon-ingredients.png" alt="ingredients" />              </div>
-              <div className="ingredients">
-                Ingredients
-                <button className="btn" type="button">
-             Download the recipe{" "}
-           </button>
-              </div>
-          </div>
-          <div className="foodPairing">
-          <button className="btn" type="button">
-             Add to Favorite{" "}
-           </button>
-           </div>
-          <div className="buttonsFlecheCroix">
-            <button onClick={close} className="btnCroix" type="button">
-              X
-            </button>
-            <button onClick={handleBack} className="btnFleche" type="button">
-              {"<"}--
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-} */ /// /////////////////////////////////////////////////////////////////////////////////
 
   return (
     <div>
@@ -102,36 +30,33 @@ function BeerCardDetails({ close }) {
             </button>
           </div>
           <div className="marg">
-            <h3 className="title">India Session Lager - Prototype Challenge</h3>
+            <h3 className="title">{name}</h3>
             <div className="imgAndText">
               <div className="imgAndTagLine">
                 <img
                   className="img"
-                  src="https://static.unepetitemousse.fr/produits/bieres/brewdog/brewdog-PunkIPA-2021_1800w.jpg"
+                  src={imageUrl}
                   alt=""
                 />
-                <h4 className="taglineBeer">Refreshing Hop Fix</h4>
+                <h4 className="taglineBeer">tagline</h4>
               </div>
               <div className="blockText">
                 <div className="dateAndAlc">
-                  <p className="date">First brewed: 11/1/2015</p>
-                  <p className="alc">Alc: 4,4%</p>
+                  <p className="date">First brewed: {firstBrewed}</p>
+                  <p className="alc">Alc: {abv}</p>
                 </div>
                 <div className="brewDetails">
                   <p>
-                    <span>Bitterness:</span> o o o o o IBU 23 (International
+                    <span>Bitterness:</span> o o o o o IBU {ibu} (International
                     Bitterness Unit)
                   </p>
                   <p>
-                    <span>Color:</span> <div className="brewColor" /> EBC 20
+                    <span>Color:</span> <div className="brewColor" /> SRM {srm}
                     (European Brewery Convention)
                   </p>
                 </div>
                 <p id="paragraphe">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Necessitatibus rem iste repudiandae atque dolorem deserunt
-                  itaque vero. Quia quis illum beatae dolore distinctio mollitia
-                  eos dolor laboriosam tempora!
+                  {description}
                 </p>
                 <button className="btn" type="button">
                   Add to Favorite{" "}
@@ -223,6 +148,13 @@ function BeerCardDetails({ close }) {
 
 BeerCardDetails.propTypes = {
   close: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  ibu: PropTypes.number.isRequired,
+  firstBrewed: PropTypes.string.isRequired,
+  abv: PropTypes.number.isRequired,
+  srm: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default BeerCardDetails;

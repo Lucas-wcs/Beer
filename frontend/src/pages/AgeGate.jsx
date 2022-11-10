@@ -75,7 +75,7 @@ function AgeGate() {
         <span className={activeAdult && "sure"}>
           <span className="sure2"> sure </span>you're{" "}
         </span>
-        over 18 years old?
+        <span className="years">over 18 years old?</span>
       </h1>
 
       <div>
