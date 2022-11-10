@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "../styles/HomePage.css";
+import "../styles/HomePopUp.css";
 
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
-
-import Footer from "@components/Footer";
-
-import axios from "axios";
-
+import HomePopUp from "@components/HomePopUp";
 import FiltersComponent from "../components/filters-comp/FiltersComponent";
+import Footer from "@components/Footer";
+import axios from "axios";
 
 function HomePage() {
   const [beerArray, setBeeArray] = useState([]);
@@ -40,6 +39,13 @@ function HomePage() {
     setMaxBitterValue(ele.maxValue);
   };
 
+
+  const [isOpen, setIsOpen] = useState(true);
+
+  const handleClose = () => {
+    setIsOpen(!isOpen)
+  }
+
   const clearFilter = () => {
     setMinAlcValue(0);
     setMaxAlcValue(11);
@@ -67,6 +73,7 @@ function HomePage() {
     callback: colorInput,
   };
 
+
   return (
     <div id="body">
       <Header />
@@ -84,6 +91,10 @@ function HomePage() {
           src="src/assets/oh-my-brew-icon-dog-ok.png"
           alt="dog"
         />
+
+        <button className="PopUpButton" onClick={() => setIsOpen(true)}>?</button>
+        <img src="src/assets/oh-my-brew-icon-dog-ok.png" alt="dog" />
+
       </div>
       <div className="beerDisplay">
         <div className="beerCardList">
@@ -132,7 +143,8 @@ function HomePage() {
         </div>
       </div>
       <Footer />
-    </div>
+      {isOpen && <HomePopUp onClose={handleClose} />}
+    </div >
   );
 }
 
