@@ -86,14 +86,15 @@ function HomePage() {
           bit={bit}
           resetEvent={(ev) => clearFilter(ev)}
         />
+<button className="PopUpButton" onClick={() => setIsOpen(true)}>?</button>
         <img
           className="dog"
           src="src/assets/oh-my-brew-icon-dog-ok.png"
           alt="dog"
         />
 
-        <button className="PopUpButton" onClick={() => setIsOpen(true)}>?</button>
-        <img src="src/assets/oh-my-brew-icon-dog-ok.png" alt="dog" />
+        
+
 
       </div>
       <div className="beerDisplay">
