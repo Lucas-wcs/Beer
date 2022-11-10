@@ -1,24 +1,134 @@
 .filtersComponent {
-  width: 25%;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.select {
+.deg-container {
+  width: 80%;
   display: flex;
-  justify-content: space-between;
-  margin: 1rem 0 1rem 0;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.bit-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.col-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.color-filter {
   width: 60%;
 }
 
+.alc-filter {
+  width: 60%;
+}
+
+.bitter-filter {
+  width: 60%;
+}
+
+.select {
+  display: flex;
+  gap: 30px;
+  margin: 1rem 0 1rem 0;
+  width: auto;
+  z-index: 2;
+  align-items: center;
+}
+
 .select button {
-  border-radius: 10%;
-  width: 5rem;
+  border-radius: 10px;
+  width: 8rem;
+}
+
+.popupButton {
+  background-color: var(--background-color-light);
+  color: var(--accent-color-2);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-family: var(--font-text-family);
+  display: flex;
+}
+
+.popupButton,
+span {
+  vertical-align: bottom;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .heart {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* ==========================media mobile=====================================*/
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .filtersComponent {
+    min-width: 320px;
+  }
+
+  .deg-container {
+    min-width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bit-container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .col-container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .color-filter {
+    width: 100%;
+  }
+
+  .alc-filter {
+    width: 100%;
+  }
+
+  .bitter-filter {
+    width: 100%;
+  }
+
+  .select {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+    width: 50%;
+  }
+
+  .select button {
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+  }
 }

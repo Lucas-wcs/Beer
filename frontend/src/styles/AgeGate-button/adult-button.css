@@ -4,7 +4,6 @@
 
 .adult {
   position: relative;
-
   background-color: var(--accent-color-2);
   color: white;
   box-shadow: var(--shadow-button);
