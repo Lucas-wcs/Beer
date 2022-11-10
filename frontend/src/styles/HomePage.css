@@ -41,19 +41,17 @@ body {
   align-content: center;
   flex-direction: column;
   background-color: var(--background-color-light);
-  height: auto;
-  padding: 3rem 3rem 0 3rem;
-}
 
-#illustration {
-  display: flex;
-  justify-content: flex-end;
+  height: auto;
+
+  padding: 3rem 3rem 0 3rem;
 }
 
 .beerCardList {
   background-color: var(--background-color-light);
   height: auto;
   width: 100%;
+
   margin: 0 auto 0 auto;
 }
 
@@ -67,4 +65,4 @@ body {
   .dog {
     display: none;
   }
-}
+

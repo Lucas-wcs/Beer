@@ -3,7 +3,11 @@ import "../styles/HomePage.css";
 
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
+
+import Footer from "@components/Footer";
+
 import axios from "axios";
+
 import FiltersComponent from "../components/filters-comp/FiltersComponent";
 
 function HomePage() {
@@ -126,11 +130,8 @@ function HomePage() {
               />
             ))}
         </div>
-        <div id="illustration">
-          <img src="src/assets/oh-my-brew-icon-dog-not-ok.png" alt="dog" />
-        </div>
       </div>
-      <section className="footer">footer</section>
+      <Footer />
     </div>
   );
 }

@@ -157,6 +157,7 @@ h1 {
 
 .years {
   text-align: center;
+
   padding-left: 25px;
 }
 
@@ -164,3 +165,4 @@ h1 {
 
 @media (min-width: 320px) and (max-width: 600px) {
 }
+
