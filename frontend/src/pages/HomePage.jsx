@@ -18,32 +18,61 @@ function HomePage() {
     });
   }, []);
 
-  const [minColValue, setMinColValue] = useState(5);
-  const [maxColValue, setMaxColValue] = useState(20);
+  const [minColValue, setMinColValue] = useState(0);
+  const [maxColValue, setMaxColValue] = useState(0);
   const colorInput = (e) => {
     setMinColValue(e.minValue);
     setMaxColValue(e.maxValue);
   };
 
-  const [minAlcValue, setMinAlcValue] = useState(2);
-  const [maxAlcValue, setMaxAlcValue] = useState(5);
+  const [minAlcValue, setMinAlcValue] = useState(0);
+  const [maxAlcValue, setMaxAlcValue] = useState(0);
   const alcInput = (el) => {
     setMinAlcValue(el.minValue);
     setMaxAlcValue(el.maxValue);
   };
 
-  const [minBitterValue, setMinBitterValue] = useState(10);
-  const [maxBitterValue, setMaxBitterValue] = useState(50);
+  const [minBitterValue, setMinBitterValue] = useState(0);
+  const [maxBitterValue, setMaxBitterValue] = useState(0);
   const bitterInput = (ele) => {
     setMinBitterValue(ele.minValue);
     setMaxBitterValue(ele.maxValue);
   };
+
 
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => {
     setIsOpen(!isOpen)
   }
+
+  const clearFilter = () => {
+    setMinAlcValue(0);
+    setMaxAlcValue(11);
+    setMinBitterValue(0);
+    setMaxBitterValue(110);
+    setMinColValue(0);
+    setMaxColValue(45);
+  };
+
+  const alc = {
+    min: minAlcValue,
+    max: maxAlcValue,
+    callback: alcInput,
+  };
+
+  const bit = {
+    min: minBitterValue,
+    max: maxBitterValue,
+    callback: bitterInput,
+  };
+
+  const col = {
+    min: minColValue,
+    max: maxColValue,
+    callback: colorInput,
+  };
+
 
   return (
     <div id="body">
@@ -52,12 +81,20 @@ function HomePage() {
         <h2>Oh my brew!</h2>
         <h3 className="taglineWebsite">Let the dogs out!</h3>
         <FiltersComponent
-          colorInput={colorInput}
-          alcInput={alcInput}
-          bitterInput={bitterInput}
+          col={col}
+          alc={alc}
+          bit={bit}
+          resetEvent={(ev) => clearFilter(ev)}
         />
+        <img
+          className="dog"
+          src="src/assets/oh-my-brew-icon-dog-ok.png"
+          alt="dog"
+        />
+
         <button className="PopUpButton" onClick={() => setIsOpen(true)}>?</button>
         <img src="src/assets/oh-my-brew-icon-dog-ok.png" alt="dog" />
+
       </div>
       <div className="beerDisplay">
         <div className="beerCardList">

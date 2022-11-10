@@ -41,14 +41,27 @@ body {
   align-content: center;
   flex-direction: column;
   background-color: var(--background-color-light);
-  height: 60vh;
+
+  height: auto;
+
   padding: 3rem 3rem 0 3rem;
 }
 
 .beerCardList {
-  background-color: lightblue;
+  background-color: var(--background-color-light);
   height: auto;
-  border: 1px solid;
   width: 100%;
-  margin: 0 auto 15px auto;
+
+  margin: 0 auto 0 auto;
 }
+
+.footer {
+  background-color: rgb(255, 205, 213);
+}
+
+/* ==========================media mobile=====================================*/
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .dog {
+    display: none;
+  }

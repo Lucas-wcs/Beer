@@ -14,6 +14,14 @@
   height: 20px;
 }
 
+.bitter-filter .bar {
+  background: transparent;
+}
+
+.alc-filter .bar {
+  background: transparent;
+}
+
 .multi-range-slider {
   display: flex;
   position: relative;
@@ -69,6 +77,20 @@
   box-shadow: inset 0px 0px 5px white;
 }
 
+.bitter-filter .multi-range-slider .bar-inner {
+  background: rgb(242, 159, 5);
+  background: linear-gradient(138deg,
+      rgba(242, 159, 5, 1) 50%,
+      rgba(156, 80, 10, 1) 100%);
+}
+
+.alc-filter .multi-range-slider .bar-inner {
+  background: rgb(242, 159, 5);
+  background: linear-gradient(138deg,
+      rgba(242, 159, 5, 1) 50%,
+      rgba(156, 80, 10, 1) 100%);
+}
+
 .multi-range-slider .bar-inner-left {
   width: 50%;
 }
@@ -83,7 +105,6 @@
   z-index: 1;
   cursor: pointer;
 }
-
 
 .multi-range-slider .thumb::before {
   content: "";
