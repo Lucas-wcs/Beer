@@ -33,11 +33,7 @@ function BeerCardDetails({
             <h3 className="title">{name}</h3>
             <div className="imgAndText">
               <div className="imgAndTagLine">
-                <img
-                  className="img"
-                  src={imageUrl}
-                  alt=""
-                />
+                <img className="img" src={imageUrl} alt="" />
                 <h4 className="taglineBeer">tagline</h4>
               </div>
               <div className="blockText">
@@ -55,9 +51,7 @@ function BeerCardDetails({
                     (European Brewery Convention)
                   </p>
                 </div>
-                <p id="paragraphe">
-                  {description}
-                </p>
+                <p id="paragraphe">{description}</p>
                 <button className="btn" type="button">
                   Add to Favorite{" "}
                 </button>
