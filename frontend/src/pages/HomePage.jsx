@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../styles/HomePage.css";
+import "../styles/HomePopUp.css";
 
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
-
+import HomePopUp from "@components/HomePopUp";
 import Footer from "@components/Footer";
-
 import axios from "axios";
-
 import FiltersComponent from "../components/filters-comp/FiltersComponent";
 
 function HomePage() {
@@ -38,6 +37,12 @@ function HomePage() {
   const bitterInput = (ele) => {
     setMinBitterValue(ele.minValue);
     setMaxBitterValue(ele.maxValue);
+  };
+
+  const [isOpen, setIsOpen] = useState(true);
+
+  const handleClose = () => {
+    setIsOpen(!isOpen);
   };
 
   const clearFilter = () => {
@@ -79,6 +84,13 @@ function HomePage() {
           bit={bit}
           resetEvent={(ev) => clearFilter(ev)}
         />
+        <button
+          className="PopUpButton"
+          onClick={() => setIsOpen(true)}
+          type="button"
+        >
+          ?
+        </button>
         <img
           className="dog"
           src="src/assets/oh-my-brew-icon-dog-ok.png"
@@ -132,6 +144,7 @@ function HomePage() {
         </div>
       </div>
       <Footer />
+      {isOpen && <HomePopUp onClose={handleClose} />}
     </div>
   );
 }
