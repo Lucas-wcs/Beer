@@ -6,14 +6,20 @@
 
 .bar {
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    138deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(242, 159, 5, 1) 50%,
-    rgba(39, 20, 12, 1) 100%
-  );
+  background: linear-gradient(138deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(242, 159, 5, 1) 50%,
+      rgba(39, 20, 12, 1) 100%);
   border-radius: 10px;
   height: 20px;
+}
+
+.bitter-filter .bar {
+  background: transparent;
+}
+
+.alc-filter .bar {
+  background: transparent;
 }
 
 .multi-range-slider {
@@ -71,6 +77,20 @@
   box-shadow: inset 0px 0px 5px white;
 }
 
+.bitter-filter .multi-range-slider .bar-inner {
+  background: rgb(242, 159, 5);
+  background: linear-gradient(138deg,
+      rgba(242, 159, 5, 1) 50%,
+      rgba(156, 80, 10, 1) 100%);
+}
+
+.alc-filter .multi-range-slider .bar-inner {
+  background: rgb(242, 159, 5);
+  background: linear-gradient(138deg,
+      rgba(242, 159, 5, 1) 50%,
+      rgba(156, 80, 10, 1) 100%);
+}
+
 .multi-range-slider .bar-inner-left {
   width: 50%;
 }
@@ -100,7 +120,7 @@
   cursor: pointer;
 }
 
-.multi-range-slider .input-type-range:focus + .thumb::after {
+.multi-range-slider .input-type-range:focus+.thumb::after {
   content: "";
   position: absolute;
   top: -4px;
@@ -145,7 +165,7 @@
   display: flex;
 }
 
-.multi-range-slider .input-type-range:focus + .thumb .caption {
+.multi-range-slider .input-type-range:focus+.thumb .caption {
   display: flex;
 }
 

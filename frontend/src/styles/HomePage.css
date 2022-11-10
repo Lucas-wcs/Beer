@@ -36,11 +36,6 @@ body {
   margin-right: 3rem;
 }
 
-main,
-h3 {
-  color: var(--accent-color-2);
-}
-
 .beerDisplay {
   display: flex;
   align-content: center;
