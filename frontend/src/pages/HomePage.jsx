@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/HomePage.css";
 import "../styles/HomePopUp.css";
-import config from '@services/config'
+import config from "@services/config";
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
 import HomePopUp from "@components/HomePopUp";
@@ -139,8 +139,6 @@ function HomePage() {
                 abv={element.abv}
                 srm={element.srm}
                 description={element.description}
-                ingredients={element.ingredients}
-                foodPairing={element.foodPairing}
               />
             ))}
         </div>
