@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/HomePage.css";
-
+import HomePopUp from "@components/HomePopUp";
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
 import BeerCardDetails from "@components/beer-card-elmt/BeerCardDetails";
@@ -72,6 +72,12 @@ function HomePage() {
     callback: colorInput,
   };
 
+  const [isOpen, setIsOpen] = useState(true);
+
+  const handleClose = () => {
+    setIsOpen(!isOpen);
+  };
+
   const [heart, setHeart] = useState(true);
   const HandleClick = (event) => {
     event.stopPropagation();
@@ -89,6 +95,13 @@ function HomePage() {
           bit={bit}
           resetEvent={(ev) => clearFilter(ev)}
         />
+        <button
+          className="PopUpButton"
+          onClick={() => setIsOpen(true)}
+          type="button"
+        >
+          ?
+        </button>
         <img
           className="dog"
           src="src/assets/oh-my-brew-icon-dog-ok.png"
@@ -164,6 +177,7 @@ function HomePage() {
         />
       ) : null}
       <Footer />
+      {isOpen && <HomePopUp onClose={handleClose} />}
     </div>
   );
 }

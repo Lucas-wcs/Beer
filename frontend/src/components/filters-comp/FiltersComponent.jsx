@@ -37,9 +37,6 @@ function FiltersComponent({ col, alc, bit, resetEvent }) {
         <button type="button" onClick={(ev) => resetEvent(ev)}>
           Clear filters
         </button>
-        <div className="popupButton">
-          <span>?</span>
-        </div>
       </div>
 
       <div className="heart">
