@@ -1,0 +1,75 @@
+.PopUpSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(191, 91, 4, 0.4);
+  z-index: 1000;
+}
+
+.PopUp {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  background-color: white;
+  width: 56.25rem;
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-card);
+}
+
+.CloseIcon {
+  display: flex;
+  justify-content: right;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.PopUpContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.PopUpAllParts {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2.5rem;
+}
+
+.PopUpRightPart {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.PopUpRightPart button {
+  width: fit-content;
+  height: auto;
+}
+
+.PopUpContent video {
+  width: 26.5rem;
+  height: 100%;
+}
+
+.PopUpButton {
+  background-color: white;
+  color: var(--accent-color-2);
+  border-radius: 10rem;
+  padding: 1rem 0.8rem;
+  line-height: 0;
+}
+
+.PopUpButton:hover {
+  box-shadow: var(--shadow-card);
+  background-color: white;
+  transform: scale(110%);
+}

@@ -25,8 +25,8 @@ function ColorFilter({ colorChange, maxColValue, minColValue }) {
 
 ColorFilter.propTypes = {
   colorChange: PropTypes.func.isRequired,
-  minColValue: PropTypes.func.isRequired,
-  maxColValue: PropTypes.func.isRequired,
+  minColValue: PropTypes.number.isRequired,
+  maxColValue: PropTypes.number.isRequired,
 };
 
 export default ColorFilter;
