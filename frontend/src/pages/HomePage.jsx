@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "../styles/HomePage.css";
-
+import "../styles/HomePopUp.css";
+import config from "@services/config";
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
-
+import HomePopUp from "@components/HomePopUp";
 import Footer from "@components/Footer";
-
 import axios from "axios";
-
 import FiltersComponent from "../components/filters-comp/FiltersComponent";
 
 function HomePage() {
   const [beerArray, setBeeArray] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/beer").then((res) => {
+    axios.get(`http://localhost:${config.port}/api/beer`).then((res) => {
       setBeeArray(res.data);
     });
   }, []);
@@ -38,6 +37,12 @@ function HomePage() {
   const bitterInput = (ele) => {
     setMinBitterValue(ele.minValue);
     setMaxBitterValue(ele.maxValue);
+  };
+
+  const [isOpen, setIsOpen] = useState(true);
+
+  const handleClose = () => {
+    setIsOpen(!isOpen);
   };
 
   const clearFilter = () => {
@@ -79,6 +84,13 @@ function HomePage() {
           bit={bit}
           resetEvent={(ev) => clearFilter(ev)}
         />
+        <button
+          className="PopUpButton"
+          onClick={() => setIsOpen(true)}
+          type="button"
+        >
+          ?
+        </button>
         <img
           className="dog"
           src="src/assets/oh-my-brew-icon-dog-ok.png"
@@ -121,17 +133,21 @@ function HomePage() {
               <BeerCard
                 key={element.id}
                 name={element.name}
-                imageUrl={`http://localhost:5000/images/${element.imageUrl}`}
+                imageUrl={`http://localhost:${config.port}/images/${element.imageUrl}`}
                 ibu={element.ibu}
                 firstBrewed={element.firstBrewed}
                 abv={element.abv}
                 srm={element.srm}
                 description={element.description}
+                foodPairing={element.foodPairing}
+                ingredients={element.ingredients}
+                tagline={element.tagline}
               />
             ))}
         </div>
       </div>
       <Footer />
+      {isOpen && <HomePopUp onClose={handleClose} />}
     </div>
   );
 }

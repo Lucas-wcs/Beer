@@ -4,7 +4,18 @@ import "../../styles/beer-card-elmt/BeerCard.css";
 import PropTypes from "prop-types";
 import BeerCardDetails from "./BeerCardDetails";
 
-function BeerCard({ name, imageUrl, ibu, firstBrewed, abv, srm, description }) {
+function BeerCard({
+  name,
+  imageUrl,
+  tagline,
+  ibu,
+  firstBrewed,
+  abv,
+  srm,
+  description,
+  ingredients,
+  foodPairing,
+}) {
   const [click, setClick] = useState(false);
 
   const close = () => setClick(false);
@@ -51,6 +62,10 @@ function BeerCard({ name, imageUrl, ibu, firstBrewed, abv, srm, description }) {
           srm={srm}
           imageUrl={imageUrl}
           description={description}
+          ingredients={ingredients}
+          foodPairing={foodPairing}
+          name={name}
+          tagline={tagline}
           close={close}
         />
       ) : null}
@@ -66,6 +81,9 @@ BeerCard.propTypes = {
   abv: PropTypes.number.isRequired,
   srm: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
+  ingredients: PropTypes.string.isRequired,
+  foodPairing: PropTypes.string.isRequired,
+  tagline: PropTypes.string.isRequired,
 };
 
 export default BeerCard;

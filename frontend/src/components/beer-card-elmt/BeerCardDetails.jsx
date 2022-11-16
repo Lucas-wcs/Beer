@@ -6,11 +6,14 @@ import PropTypes from "prop-types";
 function BeerCardDetails({
   name,
   imageUrl,
+  tagline,
   ibu,
   firstBrewed,
   abv,
   srm,
   description,
+  ingredients,
+  foodPairing,
   close,
 }) {
   const [back, setBack] = useState(true);
@@ -33,7 +36,7 @@ function BeerCardDetails({
             <div className="imgAndText">
               <div className="imgAndTagLine">
                 <img className="img" src={imageUrl} alt="" />
-                <h4 className="taglineBeer">tagline</h4>
+                <h4 className="taglineBeer">{tagline}</h4>
               </div>
               <div className="blockText">
                 <div className="dateAndAlc">
@@ -45,10 +48,10 @@ function BeerCardDetails({
                     <span>Bitterness:</span> o o o o o IBU {ibu} (International
                     Bitterness Unit)
                   </p>
-                  <p>
+                  <div>
                     <span>Color:</span> <div className="brewColor" /> SRM {srm}
                     (European Brewery Convention)
-                  </p>
+                  </div>
                 </div>
                 <p id="paragraphe">{description}</p>
                 <button className="btn" type="button">
@@ -82,9 +85,19 @@ function BeerCardDetails({
                 <div className="ingredients">
                   <div>
                     Ingredients
-                    <div>Malt:</div>
-                    <div>Hops:</div>
-                    <div>Yeast:</div>
+                    <div>
+                      Malt:
+                      {ingredients.malt.map((malts) => (
+                        <li key={`malts${malts.name}`}>{malts.name}</li>
+                      ))}
+                    </div>
+                    <div>
+                      Hops:
+                      {ingredients.hops.map((hops) => (
+                        <li key={`hops${hops.name}`}>{hops.name}</li>
+                      ))}
+                    </div>
+                    <div>Yeast:{ingredients.yeast}</div>
                   </div>
                 </div>
                 <div className="ingredientsBTN">
@@ -116,9 +129,16 @@ function BeerCardDetails({
                 </div>
                 <div className="dishes">
                   Food pairing
-                  <div>Dish 1:</div>
-                  <div>Dish 2:</div>
-                  <div>Dish 3:</div>
+                  {foodPairing !== undefined ? (
+                    foodPairing.map((dish) => (
+                      <li key={`dish${dish}`}>{dish}</li>
+                    ))
+                  ) : (
+                    <p>
+                      No food pairing : drink it without food or with your
+                      favorite dish!
+                    </p>
+                  )}
                 </div>
                 <div className="foodPairingBTN">
                   <button className="btn" type="button">
@@ -148,6 +168,9 @@ BeerCardDetails.propTypes = {
   abv: PropTypes.number.isRequired,
   srm: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
+  ingredients: PropTypes.string.isRequired,
+  foodPairing: PropTypes.string.isRequired,
+  tagline: PropTypes.string.isRequired,
 };
 
 export default BeerCardDetails;
