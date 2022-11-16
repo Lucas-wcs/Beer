@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 function BeerCardDetails({
   name,
   imageUrl,
+  tagline,
   ibu,
   firstBrewed,
   abv,
@@ -36,7 +37,7 @@ function BeerCardDetails({
             <div className="imgAndText">
               <div className="imgAndTagLine">
                 <img className="img" src={imageUrl} alt="" />
-                <h4 className="taglineBeer">tagline</h4>
+                <h4 className="taglineBeer">{tagline}</h4>
               </div>
               <div className="blockText">
                 <div className="dateAndAlc">
@@ -48,10 +49,10 @@ function BeerCardDetails({
                     <span>Bitterness:</span> o o o o o IBU {ibu} (International
                     Bitterness Unit)
                   </p>
-                  <p>
+                  <div>
                     <span>Color:</span> <div className="brewColor" /> SRM {srm}
                     (European Brewery Convention)
-                  </p>
+                  </div>
                 </div>
                 <p id="paragraphe">{description}</p>
                 <button className="btn" type="button">
@@ -88,13 +89,13 @@ function BeerCardDetails({
                     <div>
                       Malt:
                       {ingredients.malt.map((malts) => (
-                        <li>{malts.name}</li>
+                        <li key={`mats${malts.name}`}>{malts.name}</li>
                       ))}
                     </div>
                     <div>
                       Hops:
                       {ingredients.hops.map((hops) => (
-                        <li>{hops.name}</li>
+                        <li key={`hops${hops.name}`}>{hops.name}</li>
                       ))}
                     </div>
                     <div>Yeast:{ingredients.yeast}</div>
@@ -161,6 +162,7 @@ BeerCardDetails.propTypes = {
   description: PropTypes.string.isRequired,
   ingredients: PropTypes.string.isRequired,
   foodPairing: PropTypes.string.isRequired,
+  tagline: PropTypes.string.isRequired,
 };
 
 export default BeerCardDetails;

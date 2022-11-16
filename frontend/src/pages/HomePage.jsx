@@ -141,6 +141,7 @@ function HomePage() {
                 description={element.description}
                 ingredients={element.ingredients}
                 foodPairing={element.foodPairing}
+                tagline={element.tagline}
               />
             ))}
         </div>

@@ -7,6 +7,7 @@ import BeerCardDetails from "./BeerCardDetails";
 function BeerCard({
   name,
   imageUrl,
+  tagline,
   ibu,
   firstBrewed,
   abv,
@@ -63,6 +64,8 @@ function BeerCard({
           description={description}
           ingredients={ingredients}
           foodParing={foodPairing}
+          name={name}
+          tagline={tagline}
           close={close}
         />
       ) : null}
@@ -80,6 +83,7 @@ BeerCard.propTypes = {
   description: PropTypes.string.isRequired,
   ingredients: PropTypes.string.isRequired,
   foodPairing: PropTypes.string.isRequired,
+  tagline: PropTypes.string.isRequired,
 };
 
 export default BeerCard;
