@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-function HeartButton() {
-  const [heart, setHeart] = useState(true);
-  const HandleClick = (event) => {
-    event.stopPropagation();
-    setHeart(!heart);
-  };
+function HeartButton({ heart, HandleClick }) {
+
 
   return (
     <span

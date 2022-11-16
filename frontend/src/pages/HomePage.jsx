@@ -83,6 +83,13 @@ function HomePage() {
     event.stopPropagation();
     setHeart(!heart);
   };
+
+  const [favorite, setFavorite] = useState(true);
+  const handleFavorite = (event) => {
+    event.stopPropagation();
+    setFavorite(!favorite);
+  };
+
   return (
     <div id="body">
       <Header />
@@ -93,6 +100,8 @@ function HomePage() {
           col={col}
           alc={alc}
           bit={bit}
+          handleFavorite={handleFavorite}
+          favorite={favorite}
           resetEvent={(ev) => clearFilter(ev)}
         />
         <button
@@ -140,6 +149,7 @@ function HomePage() {
               }
               return null;
             })
+            //.filter((elem)=>{})
             .map((element, i) => (
               <BeerCard
                 key={element.id}
