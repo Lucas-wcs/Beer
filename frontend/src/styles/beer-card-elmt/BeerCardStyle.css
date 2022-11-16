@@ -58,6 +58,20 @@ h4 {
   border-radius: 10px;
 }
 
+
+.beerCardDetails {
+  background-color: white;
+  padding: 25px;
+  margin: 0 60px;
+  display: block;
+  flex-direction: column;
+  position: absolute;
+  z-index: 5;
+  height: 600px;
+  width: 900px;
+  border-radius: 20px;
+}
+
 .title {
   text-align: center;
   padding: 20px;
@@ -141,7 +155,6 @@ h5 {
   display: inline-block;
 }
 
-/**CSS Thomas*/
 
 .beerCardDetailsContainer {
   top: 0;
@@ -232,6 +245,7 @@ h5 {
 .btn {
   display: inline-block;
   flex-direction: row;
+
 }
 
 .foodPairing button {
@@ -258,6 +272,14 @@ rotate: 180deg;
 background-color: var(--background-color-dark);
 padding: 11px 10px;
 border-radius: 100%;
+}
+
+.buttonCroix {
+  text-align: right;
+}
+
+.buttonArrowFront {
+  text-align: right;
 }
 
 .ingredientsBTN button {

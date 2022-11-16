@@ -6,7 +6,20 @@ import "../../styles/beer-card-elmt/BeerCardStyle.css";
 import PropTypes from "prop-types";
 /* import BeerCardDetails from "./BeerCardDetails"; */
 
-function BeerCard({ index, name, imageUrl, clickEvent }) {
+
+function BeerCard({
+  name,
+  imageUrl,
+  tagline,
+  ibu,
+  firstBrewed,
+  abv,
+  srm,
+  description,
+  ingredients,
+  foodPairing,
+})
+{
   const [click, setClick] = useState(false);
 
   const handleKeyDown = (e) => {
@@ -41,15 +54,38 @@ function BeerCard({ index, name, imageUrl, clickEvent }) {
         <img className="imgIcon" src={imageUrl} alt="" />
         <h4>{name}</h4>
       </div>
-    </div>
+
+      {click === true ? (
+        <BeerCardDetails
+          ibu={ibu}
+          firstBrewed={firstBrewed}
+          abv={abv}
+          srm={srm}
+          imageUrl={imageUrl}
+          description={description}
+          ingredients={ingredients}
+          foodPairing={foodPairing}
+          name={name}
+          tagline={tagline}
+          close={close}
+        />
+      ) : null}
+    </>
   );
 }
 
 BeerCard.propTypes = {
   name: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired,
-  clickEvent: PropTypes.string.isRequired,
+
+  ibu: PropTypes.number.isRequired,
+  firstBrewed: PropTypes.string.isRequired,
+  abv: PropTypes.number.isRequired,
+  srm: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+  ingredients: PropTypes.string.isRequired,
+  foodPairing: PropTypes.string.isRequired,
+  tagline: PropTypes.string.isRequired,
 };
 
 export default BeerCard;
