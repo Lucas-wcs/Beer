@@ -14,10 +14,11 @@ function BeerCard({ index, name, imageUrl, clickEvent }) {
     }
   };
   const [heart, setHeart] = useState(true);
-  const HandleClick = (event) => {
+  const handleClick = (event) => {
     event.stopPropagation();
     setHeart(!heart);
   };
+
   return (
     <div
       className="beerCardSmall"
@@ -27,7 +28,7 @@ function BeerCard({ index, name, imageUrl, clickEvent }) {
       role="button"
     >
       <div className="cardContainer">
-        <HeartButton HandleClick={HandleClick} heart={heart} />
+        <HeartButton handleClick={handleClick} heart={heart} />
         <div>
           <img className="imgIcon" src={imageUrl} alt="" />
           <h4>{name}</h4>
