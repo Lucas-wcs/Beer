@@ -251,7 +251,6 @@ BeerCardDetails.propTypes = {
   ingredients: PropTypes.string.isRequired,
   foodPairing: PropTypes.string.isRequired,
   tagline: PropTypes.string.isRequired,
-
 };
 
 export default BeerCardDetails;
