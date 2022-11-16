@@ -145,7 +145,8 @@ h4 {
   line-height: 2.375rem;
 }
 
-p {
+p,
+li {
   font-family: var(--font-text-family);
   font-weight: var(--font-text-weight-regular);
   font-size: 1rem;

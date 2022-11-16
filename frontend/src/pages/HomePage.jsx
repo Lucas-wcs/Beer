@@ -72,6 +72,11 @@ function HomePage() {
     callback: colorInput,
   };
 
+  const [heart, setHeart] = useState(true);
+  const HandleClick = (event) => {
+    event.stopPropagation();
+    setHeart(!heart);
+  };
   return (
     <div id="body">
       <Header />
@@ -135,7 +140,10 @@ function HomePage() {
                 tagline={element.tagline}
                 description={element.description}
                 ingredients={element.ingredients}
+                foodPairing={element.foodPairing}
                 clickEvent={openBeer}
+                HandleClick={element.HandleClick}
+                heart={element.heart}
               />
             ))}
         </div>
@@ -151,6 +159,7 @@ function HomePage() {
           description={beerItem.description}
           tagline={beerItem.tagline}
           ingredients={beerItem.ingredients}
+          foodPairing={beerItem.foodPairing}
           close={() => setBeerItem(null)}
         />
       ) : null}
