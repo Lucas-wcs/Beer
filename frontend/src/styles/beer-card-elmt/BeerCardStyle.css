@@ -17,7 +17,6 @@
 
 .beerCardSmall {
   background-color: white;
-  display: inline-block;
   width: 280px;
   height: 380px;
   padding: 30px;
@@ -186,6 +185,7 @@ h5 {
 .beerCardDetails .marg {
   height: 90%;
 }
+
 .flippedContent {
   display: flex;
   flex-direction: column;
