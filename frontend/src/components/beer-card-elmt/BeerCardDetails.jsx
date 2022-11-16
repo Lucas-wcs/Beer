@@ -159,8 +159,10 @@ function BeerCardDetails({
                         <li key={`hops${hops.name}`}>{hops.name}</li>
                       ))}
                     </div>
-                    <div><p>Yeast:</p>
-                      <li>{ingredients.yeast}</li></div>
+                    <div>
+                      <p>Yeast:</p>
+                      <li>{ingredients.yeast}</li>
+                    </div>
                   </div>
                 </div>
                 <div className="ingredientsBTN">
@@ -191,9 +193,7 @@ function BeerCardDetails({
                   />
                 </div>
                 <div className="dishes">
-                  <h4>
-                    Food pairing
-                  </h4>
+                  <h4>Food pairing</h4>
                   {foodPairing !== undefined ? (
                     foodPairing.map((dish) => (
                       <li key={`dish${dish}`}>{dish}</li>
@@ -255,7 +255,6 @@ BeerCardDetails.propTypes = {
   ingredients: PropTypes.string.isRequired,
   foodPairing: PropTypes.string.isRequired,
   tagline: PropTypes.string.isRequired,
-
 };
 
 export default BeerCardDetails;

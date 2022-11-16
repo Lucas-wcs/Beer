@@ -142,7 +142,7 @@ function HomePage() {
                 ingredients={element.ingredients}
                 foodPairing={element.foodPairing}
                 clickEvent={openBeer}
-                HandleClick={element.HandleClick}
+                HandleClick={HandleClick}
                 heart={element.heart}
               />
             ))}
