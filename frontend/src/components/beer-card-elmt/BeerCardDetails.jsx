@@ -21,16 +21,26 @@ function BeerCardDetails({
   };
 
   return (
-    <div>
+    <div className="beerCardDetailsContainer">
       {back ? (
         <div className="beerCardDetails">
-          <div className="buttonCroix">
-            <button onClick={close} className="btnCroix" type="button">
+          <div className="btnCroix">
+            <div
+              onClick={close}
+              role="button"
+              onKeyDown={close}
+              tabIndex={0}
+              className="btnCroixSVG"
+            >
               <svg
                 width="12"
                 height="12"
                 viewBox="0 0 12 12"
                 fill="none"
+                onClick={close}
+                role="button"
+                onKeyDown={close}
+                tabIndex={0}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -40,7 +50,7 @@ function BeerCardDetails({
                   fill="#592C1C"
                 />
               </svg>
-            </button>
+            </div>
           </div>
           <div className="marg">
             <h3 className="title">{name}</h3>
@@ -70,18 +80,43 @@ function BeerCardDetails({
                 </button>
               </div>
             </div>
-            <div className="buttonCroix">
-              <button onClick={handleBack} className="btnFleche" type="button">
-                --{">"}
-              </button>
+          </div>
+          <div className="buttonArrowFront">
+            <div
+              onClick={handleBack}
+              role="button"
+              onKeyDown={handleBack}
+              tabIndex={0}
+              className="buttonArrowFrontSVG"
+            >
+              <svg
+                width="22"
+                height="15"
+                viewBox="0 0 22 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M13.8046 0.279964C14.1876 -0.0958387 14.8056 -0.0929361 15.1849 0.286448L21.7174 6.81955C22.0942 7.19639 22.0942 7.80361 21.7174 8.18045L15.1849 14.7136C14.8056 15.0929 14.1876 15.0958 13.8046 14.72C13.4217 14.3442 13.4187 13.732 13.7981 13.3526L18.6834 8.4669H0.976019C0.436979 8.4669 0 8.034 0 7.5C0 6.966 0.436979 6.5331 0.976019 6.5331H18.6834L13.7981 1.64735C13.4187 1.26797 13.4217 0.655767 13.8046 0.279964Z"
+                  fill="#592C1C"
+                />
+              </svg>
             </div>
           </div>
         </div>
       ) : (
         <div className="card-is-flipped">
           <div className="flippedContent">
-            <div className="buttonCroix">
-              <button onClick={close} className="btnCroix" type="button">
+            <div className="btnCroix">
+              <div
+                onClick={close}
+                role="button"
+                onKeyDown={close}
+                tabIndex={0}
+                className="btnCroixSVG"
+              >
                 <svg
                   width="12"
                   height="12"
@@ -96,7 +131,7 @@ function BeerCardDetails({
                     fill="#592C1C"
                   />
                 </svg>
-              </button>
+              </div>
             </div>
             <div className="flippedContainers">
               <div className="recipe">
@@ -154,10 +189,29 @@ function BeerCardDetails({
                 </div>
               </div>
             </div>
-            <div className="buttonsFleche">
-              <button onClick={handleBack} className="btnFleche" type="button">
-                {"<"}--
-              </button>
+            <div className="buttonArrowBack">
+              <div
+                onClick={handleBack}
+                role="button"
+                onKeyDown={handleBack}
+                tabIndex={0}
+                className="buttonArrowBackSVG"
+              >
+                <svg
+                  width="22"
+                  height="15"
+                  viewBox="0 0 22 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M13.8046 0.279964C14.1876 -0.0958387 14.8056 -0.0929361 15.1849 0.286448L21.7174 6.81955C22.0942 7.19639 22.0942 7.80361 21.7174 8.18045L15.1849 14.7136C14.8056 15.0929 14.1876 15.0958 13.8046 14.72C13.4217 14.3442 13.4187 13.732 13.7981 13.3526L18.6834 8.4669H0.976019C0.436979 8.4669 0 8.034 0 7.5C0 6.966 0.436979 6.5331 0.976019 6.5331H18.6834L13.7981 1.64735C13.4187 1.26797 13.4217 0.655767 13.8046 0.279964Z"
+                    fill="#592C1C"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>

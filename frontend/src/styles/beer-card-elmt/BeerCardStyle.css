@@ -25,11 +25,11 @@
   z-index: 1;
   box-shadow: var(--shadow-card);
   border-radius: 10px;
-  transition: scale 1s ease-in-out;
+  transition: scale 0.2s ease-in-out;
 }
 
 .beerCardSmall:hover {
-  scale: 1.1;
+  scale: 1.06;
 }
 
 .cardContainer {
@@ -56,19 +56,6 @@ h4 {
   width: 210px;
   height: 200px;
   border-radius: 10px;
-}
-
-.beerCardDetails {
-  background-color: white;
-  padding: 25px;
-  margin: 0 60px;
-  display: block;
-  flex-direction: column;
-  position: absolute;
-  z-index: 5;
-  height: 600px;
-  width: 900px;
-  border-radius: 20px;
 }
 
 .title {
@@ -115,10 +102,6 @@ h4 {
   padding: 2rem 0 2rem 0;
 }
 
-.btn {
-  display: inline-block;
-  flex-direction: row;
-}
 
 .dateAndAlc {
   display: flex;
@@ -160,20 +143,47 @@ h5 {
 
 /**CSS Thomas*/
 
+.beerCardDetailsContainer {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background-color: rgba(191, 91, 4, 0.4);
+
+}
+
+.beerCardDetails {
+  background-color: white;
+  padding: 25px;
+  margin: 0 auto;
+  display: block;
+  flex-direction: column;
+  height: 95vh;
+  width: 900px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+}
+
 .card-is-flipped {
   background-color: white;
   padding: 25px;
-  margin: 0 60px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  z-index: 5;
-  height: 600px;
+  height: 95vh;
   width: 900px;
   border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-card);
 }
 
+.beerCardDetails .marg {
+  height: 90%;
+}
 .flippedContent {
   display: flex;
   flex-direction: column;
@@ -209,16 +219,45 @@ h5 {
   padding: 2rem;
 }
 
+.btnCroix {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btnCroixSVG {
+  padding: 15px;
+  margin: -15px;
+}
+
+.btn {
+  display: inline-block;
+  flex-direction: row;
+}
+
 .foodPairing button {
   width: 10rem;
 }
 
-.buttonCroix {
-  text-align: right;
+.buttonArrowFront {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.buttonArrowFront {
-  text-align: right;
+.buttonArrowFrontSVG {
+  background-color: var(--background-color-dark);
+  padding: 11px 10px;
+  border-radius: 100%;
+}
+
+.buttonArrowBack {
+  display: flex;
+}
+
+.buttonArrowBackSVG {
+rotate: 180deg;
+background-color: var(--background-color-dark);
+padding: 11px 10px;
+border-radius: 100%;
 }
 
 .ingredientsBTN button {
