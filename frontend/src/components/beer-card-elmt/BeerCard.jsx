@@ -63,7 +63,7 @@ function BeerCard({
           imageUrl={imageUrl}
           description={description}
           ingredients={ingredients}
-          foodParing={foodPairing}
+          foodPairing={foodPairing}
           name={name}
           tagline={tagline}
           close={close}

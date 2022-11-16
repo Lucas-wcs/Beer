@@ -130,7 +130,16 @@ function BeerCardDetails({
                 </div>
                 <div className="dishes">
                   Food pairing
-                  {foodPairing}
+                  {foodPairing !== undefined ? (
+                    foodPairing.map((dish) => (
+                      <li key={`dish${dish}`}>{dish}</li>
+                    ))
+                  ) : (
+                    <p>
+                      No food pairing : drink it without food or with your
+                      favorite dish!
+                    </p>
+                  )}
                 </div>
                 <div className="foodPairingBTN">
                   <button className="btn" type="button">
