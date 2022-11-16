@@ -140,6 +140,7 @@ function HomePage() {
                 srm={element.srm}
                 description={element.description}
                 foodPairing={element.foodPairing}
+                ingredients={element.ingredients}
                 tagline={element.tagline}
               />
             ))}

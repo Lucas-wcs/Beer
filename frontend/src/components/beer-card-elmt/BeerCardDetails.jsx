@@ -89,7 +89,7 @@ function BeerCardDetails({
                     <div>
                       Malt:
                       {ingredients.malt.map((malts) => (
-                        <li key={`mats${malts.name}`}>{malts.name}</li>
+                        <li key={`malts${malts.name}`}>{malts.name}</li>
                       ))}
                     </div>
                     <div>
