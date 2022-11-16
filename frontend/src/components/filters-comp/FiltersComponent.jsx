@@ -5,7 +5,14 @@ import ColorFilter from "./ColorFilter";
 import AlcFilter from "./AlcFilter";
 import BitterFilter from "./BitterFilter";
 
-function FiltersComponent({ col, alc, bit, resetEvent, handleFavorite, favorite }) {
+function FiltersComponent({
+  col,
+  alc,
+  bit,
+  resetEvent,
+  handleFavorite,
+  favorite,
+}) {
   return (
     <div className="filtersComponent">
       <div className="deg-container">
@@ -75,7 +82,6 @@ function FiltersComponent({ col, alc, bit, resetEvent, handleFavorite, favorite 
           </svg>
         )}
       </span>
-
     </div>
   );
 }
@@ -84,6 +90,8 @@ FiltersComponent.propTypes = {
   col: PropTypes.func.isRequired,
   alc: PropTypes.func.isRequired,
   bit: PropTypes.func.isRequired,
+  favorite: PropTypes.func.isRequired,
+  handleFavorite: PropTypes.func.isRequired,
   resetEvent: PropTypes.func.isRequired,
 };
 

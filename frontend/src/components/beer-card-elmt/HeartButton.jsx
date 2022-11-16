@@ -1,14 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function HeartButton({ heart, HandleClick }) {
-
-
+function HeartButton({ heart, handleClick }) {
   return (
     <span
-      onClick={HandleClick}
+      onClick={handleClick}
       className="heart-button"
       role="button"
-      onKeyDown={HandleClick}
+      onKeyDown={handleClick}
       tabIndex={0}
     >
       {heart ? (
@@ -41,5 +40,8 @@ function HeartButton({ heart, HandleClick }) {
     </span>
   );
 }
-
+HeartButton.propTypes = {
+  heart: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
 export default HeartButton;

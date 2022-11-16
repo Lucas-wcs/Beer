@@ -79,7 +79,7 @@ function HomePage() {
   };
 
   const [heart, setHeart] = useState(true);
-  const HandleClick = (event) => {
+  const handleClick = (event) => {
     event.stopPropagation();
     setHeart(!heart);
   };
@@ -149,7 +149,7 @@ function HomePage() {
               }
               return null;
             })
-            //.filter((elem)=>{})
+            // .filter((elem)=>{})
             .map((element, i) => (
               <BeerCard
                 key={element.id}
@@ -165,7 +165,7 @@ function HomePage() {
                 ingredients={element.ingredients}
                 foodPairing={element.foodPairing}
                 clickEvent={openBeer}
-                HandleClick={HandleClick}
+                HandleClick={handleClick}
                 heart={element.heart}
               />
             ))}
