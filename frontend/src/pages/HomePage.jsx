@@ -139,6 +139,8 @@ function HomePage() {
                 abv={element.abv}
                 srm={element.srm}
                 description={element.description}
+                ingredients={element.ingredients}
+                foodPairing={element.foodPairing}
               />
             ))}
         </div>

@@ -12,6 +12,8 @@ function BeerCardDetails({
   abv,
   srm,
   description,
+  ingredients,
+  foodPairing,
   close,
 }) {
   const [back, setBack] = useState(true);
@@ -83,9 +85,19 @@ function BeerCardDetails({
                 <div className="ingredients">
                   <div>
                     Ingredients
-                    <div>Malt:</div>
-                    <div>Hops:</div>
-                    <div>Yeast:</div>
+                    <div>
+                      Malt:
+                      {ingredients.malt.map((malts) => (
+                        <li>{malts.name}</li>
+                      ))}
+                    </div>
+                    <div>
+                      Hops:
+                      {ingredients.hops.map((hops) => (
+                        <li>{hops.name}</li>
+                      ))}
+                    </div>
+                    <div>Yeast:{ingredients.yeast}</div>
                   </div>
                 </div>
                 <div className="ingredientsBTN">
@@ -117,9 +129,7 @@ function BeerCardDetails({
                 </div>
                 <div className="dishes">
                   Food pairing
-                  <div>Dish 1:</div>
-                  <div>Dish 2:</div>
-                  <div>Dish 3:</div>
+                  {foodPairing}
                 </div>
                 <div className="foodPairingBTN">
                   <button className="btn" type="button">
@@ -149,6 +159,8 @@ BeerCardDetails.propTypes = {
   abv: PropTypes.number.isRequired,
   srm: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
+  ingredients: PropTypes.string.isRequired,
+  foodPairing: PropTypes.string.isRequired,
 };
 
 export default BeerCardDetails;
