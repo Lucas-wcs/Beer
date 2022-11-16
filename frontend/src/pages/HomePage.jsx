@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/HomePage.css";
 import "../styles/HomePopUp.css";
-
+import config from "@services/config";
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
 import HomePopUp from "@components/HomePopUp";
@@ -13,7 +13,7 @@ function HomePage() {
   const [beerArray, setBeeArray] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/beer").then((res) => {
+    axios.get(`http://localhost:${config.port}/api/beer`).then((res) => {
       setBeeArray(res.data);
     });
   }, []);
@@ -133,13 +133,12 @@ function HomePage() {
               <BeerCard
                 key={element.id}
                 name={element.name}
-                imageUrl={`http://localhost:5000/images/${element.imageUrl}`}
+                imageUrl={`http://localhost:${config.port}/images/${element.imageUrl}`}
                 ibu={element.ibu}
                 firstBrewed={element.firstBrewed}
                 abv={element.abv}
                 srm={element.srm}
                 description={element.description}
-                ingredients={element.ingredients}
                 foodPairing={element.foodPairing}
                 tagline={element.tagline}
               />
