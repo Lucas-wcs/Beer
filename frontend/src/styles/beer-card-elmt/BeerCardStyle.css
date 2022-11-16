@@ -102,7 +102,6 @@ h4 {
   padding: 2rem 0 2rem 0;
 }
 
-
 .dateAndAlc {
   display: flex;
   gap: 20px;
@@ -154,7 +153,6 @@ h5 {
   z-index: 100;
   width: 100%;
   background-color: rgba(191, 91, 4, 0.4);
-
 }
 
 .beerCardDetails {
@@ -254,10 +252,10 @@ h5 {
 }
 
 .buttonArrowBackSVG {
-rotate: 180deg;
-background-color: var(--background-color-dark);
-padding: 11px 10px;
-border-radius: 100%;
+  rotate: 180deg;
+  background-color: var(--background-color-dark);
+  padding: 11px 10px;
+  border-radius: 100%;
 }
 
 .ingredientsBTN button {
