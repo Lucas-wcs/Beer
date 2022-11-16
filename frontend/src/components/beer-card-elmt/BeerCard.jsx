@@ -6,7 +6,17 @@ import PropTypes from "prop-types";
 import BeerCardDetails from "./BeerCardDetails";
 import HeartButton from "./HeartButton";
 
-function BeerCard({ name, imageUrl, ibu, firstBrewed, abv, srm, description }) {
+function BeerCard({
+  name,
+  imageUrl,
+  ibu,
+  firstBrewed,
+  abv,
+  srm,
+  description,
+  tagline,
+  ingredients,
+}) {
   const [click, setClick] = useState(false);
 
   const close = () => setClick(false);
@@ -42,6 +52,9 @@ function BeerCard({ name, imageUrl, ibu, firstBrewed, abv, srm, description }) {
           srm={srm}
           imageUrl={imageUrl}
           description={description}
+          tagline={tagline}
+          name={name}
+          ingredients={ingredients}
           close={close}
         />
       ) : null}
@@ -57,6 +70,8 @@ BeerCard.propTypes = {
   abv: PropTypes.number.isRequired,
   srm: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
+  ingredients: PropTypes.string.isRequired,
+  tagline: PropTypes.string.isRequired,
 };
 
 export default BeerCard;
