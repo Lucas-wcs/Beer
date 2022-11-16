@@ -44,8 +44,7 @@ h4 {
   text-align: center;
 }
 
-.cardContainer,
-.heartCard {
+.cardContainer {
   display: flex;
   align-items: flex-end;
   margin-bottom: 20px;
