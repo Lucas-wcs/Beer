@@ -7,9 +7,7 @@ const beerRoutes = require("./router");
 const app = express();
 
 // use some application-level middlewares
-app.use(
-  cors()
-);
+app.use(cors());
 
 app.use(express.json());
 
