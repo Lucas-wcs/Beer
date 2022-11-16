@@ -4,6 +4,7 @@ import "../styles/HomePopUp.css";
 import config from "@services/config";
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
+import BeerCardDetails from "@components/beer-card-elmt/BeerCardDetails";
 import HomePopUp from "@components/HomePopUp";
 import Footer from "@components/Footer";
 import axios from "axios";
@@ -11,6 +12,11 @@ import FiltersComponent from "../components/filters-comp/FiltersComponent";
 
 function HomePage() {
   const [beerArray, setBeeArray] = useState([]);
+  const [beerItem, setBeerItem] = useState();
+
+  const openBeer = (index) => {
+    setBeerItem(beerArray[index]);
+  };
 
   useEffect(() => {
     axios.get(`http://localhost:${config.port}/api/beer`).then((res) => {
@@ -129,15 +135,17 @@ function HomePage() {
               }
               return null;
             })
-            .map((element) => (
+            .map((element, i) => (
               <BeerCard
                 key={element.id}
                 name={element.name}
+                index={i}
                 imageUrl={`http://localhost:${config.port}/images/${element.imageUrl}`}
                 ibu={element.ibu}
                 firstBrewed={element.firstBrewed}
                 abv={element.abv}
                 srm={element.srm}
+                tagline={element.tagline}
                 description={element.description}
                 foodPairing={element.foodPairing}
                 ingredients={element.ingredients}
@@ -146,6 +154,19 @@ function HomePage() {
             ))}
         </div>
       </div>
+      {beerItem ? (
+        <BeerCardDetails
+          name={beerItem.name}
+          ibu={beerItem.ibu}
+          firstBrewed={beerItem.firstBrewed}
+          abv={beerItem.abv}
+          srm={beerItem.srm}
+          imageUrl={`http://localhost:5000/images/${beerItem.imageUrl}`}
+          description={beerItem.description}
+          tagline={beerItem.tagline}
+          close={() => setBeerItem(null)}
+        />
+      ) : null}
       <Footer />
       {isOpen && <HomePopUp onClose={handleClose} />}
     </div>
