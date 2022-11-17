@@ -14,6 +14,7 @@ function BeerCardDetails({
   ingredients,
   foodPairing,
   close,
+  handleClick,
 }) {
   const [back, setBack] = useState(true);
 
@@ -78,7 +79,7 @@ function BeerCardDetails({
                   </div>
                 </div>
                 <p id="paragraphe">{description}</p>
-                <button className="btn" type="button">
+                <button className="btn" type="button" onClick={handleClick}>
                   Add to Favorite{" "}
                 </button>
               </div>
@@ -206,7 +207,7 @@ function BeerCardDetails({
                   )}
                 </div>
                 <div className="foodPairingBTN">
-                  <button className="btn" type="button">
+                  <button className="btn" type="button" onClick={handleClick}>
                     Add to Favorite{" "}
                   </button>
                 </div>
@@ -255,6 +256,7 @@ BeerCardDetails.propTypes = {
   ingredients: PropTypes.string.isRequired,
   foodPairing: PropTypes.string.isRequired,
   tagline: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default BeerCardDetails;

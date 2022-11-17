@@ -10,7 +10,7 @@ function HeartButton({ heart, handleClick }) {
       onKeyDown={handleClick}
       tabIndex={0}
     >
-      {heart ? (
+      {!heart ? (
         <svg
           width="25"
           height="22"

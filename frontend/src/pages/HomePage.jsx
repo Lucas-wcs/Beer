@@ -15,7 +15,9 @@ function HomePage() {
   const [beerItem, setBeerItem] = useState();
 
   const openBeer = (index) => {
-    setBeerItem(beerArray[index]);
+    const temp = { ...beerArray[index] };
+    temp.index = index;
+    setBeerItem(temp);
   };
 
   useEffect(() => {
@@ -78,10 +80,11 @@ function HomePage() {
     setIsOpen(!isOpen);
   };
 
-  const [heart, setHeart] = useState(true);
-  const handleClick = (event) => {
+  const handleClick = (event, index) => {
     event.stopPropagation();
-    setHeart(!heart);
+    const temp = [...beerArray];
+    temp[index].heart = !temp[index].heart;
+    setBeeArray(temp);
   };
 
   const [favorite, setFavorite] = useState(true);
@@ -149,13 +152,14 @@ function HomePage() {
               }
               return null;
             })
+
             /* .filter((elem) => {
-              if (!favorite) {
-                if (elem.heart === false)
-                  return elem;
+              if (!favorite && elem.heart) {
+                elem
               }
-              return null;
+              null
             }) */
+
             .map((element, i) => (
               <BeerCard
                 key={element.id}
@@ -171,7 +175,7 @@ function HomePage() {
                 ingredients={element.ingredients}
                 foodPairing={element.foodPairing}
                 clickEvent={openBeer}
-                HandleClick={handleClick}
+                handleClick={(event) => handleClick(event, i)}
                 heart={element.heart}
               />
             ))}
@@ -190,6 +194,8 @@ function HomePage() {
           ingredients={beerItem.ingredients}
           foodPairing={beerItem.foodPairing}
           close={() => setBeerItem(null)}
+          handleClick={(event) => handleClick(event, beerItem.index)}
+          favorite={beerItem.favorite}
         />
       ) : null}
       <Footer />
