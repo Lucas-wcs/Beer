@@ -5,18 +5,13 @@ import "../../styles/beer-card-elmt/HeartButton.css";
 import HeartButton from "./HeartButton";
 import "../../styles/beer-card-elmt/BeerCardStyle.css";
 
-function BeerCard({ index, name, imageUrl, clickEvent }) {
+function BeerCard({ index, name, imageUrl, clickEvent, handleClick, heart }) {
   const [click, setClick] = useState(false);
 
   const handleKeyDown = (e) => {
     if (e.keyCode === 13) {
       setClick(!click);
     }
-  };
-  const [heart, setHeart] = useState(true);
-  const handleClick = (event) => {
-    event.stopPropagation();
-    setHeart(!heart);
   };
 
   return (
@@ -43,6 +38,8 @@ BeerCard.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   clickEvent: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  heart: PropTypes.string.isRequired,
 };
 
 export default BeerCard;
