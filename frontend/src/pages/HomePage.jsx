@@ -12,25 +12,31 @@ import FiltersComponent from "../components/filters-comp/FiltersComponent";
 
 function HomePage() {
   const [beerArray, setBeeArray] = useState([]);
+
+  const [filteredBeer, setFilteredBeer] = useState([]);
   const [beerItem, setBeerItem] = useState();
 
-  const openBeer = (index) => {
-    const temp = { ...beerArray[index] };
-    temp.index = index;
-    setBeerItem(temp);
-  };
+  let filterAgain;
 
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/beer`).then((res) => {
       setBeeArray(res.data);
+      setFilteredBeer(res.data);
     });
   }, []);
+
+  const openBeer = (index) => {
+    const temp = { ...filteredBeer[index] };
+    temp.index = index;
+    setBeerItem(temp);
+  };
 
   const [minColValue, setMinColValue] = useState(0);
   const [maxColValue, setMaxColValue] = useState(0);
   const colorInput = (e) => {
     setMinColValue(e.minValue);
     setMaxColValue(e.maxValue);
+    filterAgain();
   };
 
   const [minAlcValue, setMinAlcValue] = useState(0);
@@ -38,6 +44,7 @@ function HomePage() {
   const alcInput = (el) => {
     setMinAlcValue(el.minValue);
     setMaxAlcValue(el.maxValue);
+    filterAgain();
   };
 
   const [minBitterValue, setMinBitterValue] = useState(0);
@@ -45,15 +52,7 @@ function HomePage() {
   const bitterInput = (ele) => {
     setMinBitterValue(ele.minValue);
     setMaxBitterValue(ele.maxValue);
-  };
-
-  const clearFilter = () => {
-    setMinAlcValue(0);
-    setMaxAlcValue(11);
-    setMinBitterValue(0);
-    setMaxBitterValue(110);
-    setMinColValue(0);
-    setMaxColValue(45);
+    filterAgain();
   };
 
   const alc = {
@@ -67,11 +66,65 @@ function HomePage() {
     max: maxBitterValue,
     callback: bitterInput,
   };
-
   const col = {
     min: minColValue,
     max: maxColValue,
     callback: colorInput,
+  };
+
+  const [favorite, setFavorite] = useState(true);
+  const handleFavorite = (event) => {
+    event.stopPropagation();
+    setFavorite(!favorite);
+  };
+
+  filterAgain = () => {
+    setFilteredBeer(
+      beerArray
+        .filter((ele) => {
+          if (maxAlcValue >= 11) {
+            if (ele.abv >= minAlcValue) return ele;
+          }
+          if (maxAlcValue <= 10) {
+            if (ele.abv >= minAlcValue && ele.abv <= maxAlcValue) return ele;
+          }
+          return null;
+        })
+        .filter((el) => {
+          if (maxColValue >= 45) {
+            if (el.srm > minColValue) return el;
+          }
+          if (maxColValue <= 40) {
+            if (el.srm >= minColValue && el.srm <= maxColValue) return el;
+          }
+          return null;
+        })
+        .filter((ele) => {
+          if (maxBitterValue >= 110) {
+            if (ele.ibu > minBitterValue) return ele;
+          }
+          if (maxBitterValue <= 100) {
+            if (ele.ibu >= minBitterValue && ele.ibu <= maxBitterValue)
+              return ele;
+          }
+          return null;
+        })
+        .filter((elem) => {
+          if (!favorite) {
+            return elem.heart;
+          }
+          return true;
+        })
+    );
+  };
+
+  const clearFilter = () => {
+    setMinAlcValue(0);
+    setMaxAlcValue(11);
+    setMinBitterValue(0);
+    setMaxBitterValue(110);
+    setMinColValue(0);
+    setMaxColValue(45);
   };
 
   const [showButton, setShowButton] = useState(false);
@@ -106,12 +159,6 @@ function HomePage() {
     setBeeArray(temp);
   };
 
-  const [favorite, setFavorite] = useState(true);
-  const handleFavorite = (event) => {
-    event.stopPropagation();
-    setFavorite(!favorite);
-  };
-
   return (
     <div id="body">
       <Header />
@@ -141,63 +188,27 @@ function HomePage() {
       </div>
       <div className="beerDisplay">
         <div className="beerCardList">
-          {beerArray
-            .filter((ele) => {
-              if (maxAlcValue >= 11) {
-                if (ele.abv >= minAlcValue) return ele;
-              }
-              if (maxAlcValue <= 10) {
-                if (ele.abv >= minAlcValue && ele.abv <= maxAlcValue)
-                  return ele;
-              }
-              return null;
-            })
-            .filter((el) => {
-              if (maxColValue >= 45) {
-                if (el.srm > minColValue) return el;
-              }
-              if (maxColValue <= 40) {
-                if (el.srm >= minColValue && el.srm <= maxColValue) return el;
-              }
-              return null;
-            })
-            .filter((ele) => {
-              if (maxBitterValue >= 110) {
-                if (ele.ibu > minBitterValue) return ele;
-              }
-              if (maxBitterValue <= 100) {
-                if (ele.ibu >= minBitterValue && ele.ibu <= maxBitterValue)
-                  return ele;
-              }
-              return null;
-            })
-            .filter((elem) => {
-              if (!favorite) {
-                return elem.heart;
-              }
-              return true;
-            })
-            .map((element, i) => (
-              <BeerCard
-                key={element.id}
-                name={element.name}
-                imageUrl={`${import.meta.env.VITE_BACKEND_URL}/images/${
-                  element.imageUrl
-                }`}
-                index={i}
-                ibu={element.ibu}
-                firstBrewed={element.firstBrewed}
-                abv={element.abv}
-                srm={element.srm}
-                tagline={element.tagline}
-                description={element.description}
-                ingredients={element.ingredients}
-                foodPairing={element.foodPairing}
-                clickEvent={openBeer}
-                handleClick={(event) => handleClick(event, i)}
-                heart={element.heart}
-              />
-            ))}
+          {filteredBeer.map((element, i) => (
+            <BeerCard
+              key={element.id}
+              name={element.name}
+              imageUrl={`${import.meta.env.VITE_BACKEND_URL}/images/${
+                element.imageUrl
+              }`}
+              index={i}
+              ibu={element.ibu}
+              firstBrewed={element.firstBrewed}
+              abv={element.abv}
+              srm={element.srm}
+              tagline={element.tagline}
+              description={element.description}
+              ingredients={element.ingredients}
+              foodPairing={element.foodPairing}
+              clickEvent={openBeer}
+              handleClick={(event) => handleClick(event, i)}
+              heart={element.heart}
+            />
+          ))}
         </div>
       </div>
       {beerItem ? (
