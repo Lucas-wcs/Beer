@@ -100,10 +100,6 @@ h4 {
   padding: 2rem 0 2rem 0;
 }
 
-.btn {
-  display: inline-block;
-  flex-direction: row;
-}
 
 .dateAndAlc {
   display: flex;
@@ -143,7 +139,32 @@ h5 {
   display: inline-block;
 }
 
-/**CSS Thomas*/
+
+.beerCardDetailsContainer {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background-color: rgba(191, 91, 4, 0.4);
+
+}
+
+.beerCardDetails {
+  background-color: white;
+  padding: 25px;
+  margin: 0 auto;
+  display: block;
+  flex-direction: column;
+  height: 95vh;
+  width: 900px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+}
 
 .beerCardDetailsContainer {
   top: 0;
@@ -184,8 +205,12 @@ h5 {
 
 .beerCardDetails .marg {
   height: 90%;
+
 }
 
+.beerCardDetails .marg {
+  height: 90%;
+}
 .flippedContent {
   display: flex;
   flex-direction: column;
@@ -249,6 +274,7 @@ h5 {
   background-color: var(--background-color-dark);
   padding: 11px 10px;
   border-radius: 100%;
+
 }
 
 .buttonArrowBack {

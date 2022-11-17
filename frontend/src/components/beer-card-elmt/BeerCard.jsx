@@ -6,6 +6,7 @@ import HeartButton from "./HeartButton";
 import "../../styles/beer-card-elmt/BeerCardStyle.css";
 
 function BeerCard({ index, name, imageUrl, clickEvent, handleClick, heart }) {
+
   const [click, setClick] = useState(false);
 
   const handleKeyDown = (e) => {
@@ -27,9 +28,13 @@ function BeerCard({ index, name, imageUrl, clickEvent, handleClick, heart }) {
         <div>
           <img className="imgIcon" src={imageUrl} alt="" />
           <h4>{name}</h4>
+
         </div>
+        <img className="imgIcon" src={imageUrl} alt="" />
+        <h4>{name}</h4>
       </div>
     </div>
+
   );
 }
 
