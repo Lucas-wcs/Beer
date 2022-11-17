@@ -185,7 +185,6 @@ function HomePage() {
                   element.imageUrl
                 }`}
                 index={i}
-
                 ibu={element.ibu}
                 firstBrewed={element.firstBrewed}
                 abv={element.abv}
@@ -216,7 +215,6 @@ function HomePage() {
           close={() => setBeerItem(null)}
           handleClick={(event) => handleClick(event, beerItem.index)}
           favorite={beerItem.favorite}
-
         />
       ) : null}
       <Footer />
