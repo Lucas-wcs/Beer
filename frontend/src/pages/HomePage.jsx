@@ -149,7 +149,13 @@ function HomePage() {
               }
               return null;
             })
-            // .filter((elem)=>{})
+            /* .filter((elem) => {
+              if (!favorite) {
+                if (elem.heart === false)
+                  return elem;
+              }
+              return null;
+            }) */
             .map((element, i) => (
               <BeerCard
                 key={element.id}
