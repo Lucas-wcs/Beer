@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-/* import "../../styles/beer-card-elmt/BeerCardStyle.css"; */
+
 
 import PropTypes from "prop-types";
 
@@ -15,6 +15,7 @@ function BeerCardDetails({
   ingredients,
   foodPairing,
   close,
+  handleClick,
 }) {
   const [back, setBack] = useState(true);
 
@@ -68,16 +69,18 @@ function BeerCardDetails({
                 </div>
                 <div className="brewDetails">
                   <p>
-                    <span>Bitterness:</span> o o o o o IBU {ibu} (International
+                    <h5>Bitterness:</h5> o o o o o IBU {ibu} (International
                     Bitterness Unit)
                   </p>
                   <div>
-                    <span>Color:</span> <div className="brewColor" /> SRM {srm}
-                    (European Brewery Convention)
+                    <p>
+                      <h5>Color:</h5> <div className="brewColor" /> SRM {srm}
+                      (European Brewery Convention)
+                    </p>
                   </div>
                 </div>
                 <p id="paragraphe">{description}</p>
-                <button className="btn" type="button">
+                <button className="btn" type="button" onClick={handleClick}>
                   Add to Favorite{" "}
                 </button>
               </div>
@@ -145,20 +148,23 @@ function BeerCardDetails({
                 </div>
                 <div className="ingredients">
                   <div>
-                    Ingredients
+                    <h4>Ingredients:</h4>
                     <div>
-                      Malt:
+                      <p>Malt:</p>
                       {ingredients.malt.map((malts) => (
                         <li key={`malts${malts.name}`}>{malts.name}</li>
                       ))}
                     </div>
                     <div>
-                      Hops:
+                      <p>Hops:</p>
                       {ingredients.hops.map((hops) => (
                         <li key={`hops${hops.name}`}>{hops.name}</li>
                       ))}
                     </div>
-                    <div>Yeast:{ingredients.yeast}</div>
+                    <div>
+                      <p>Yeast:</p>
+                      <li>{ingredients.yeast}</li>
+                    </div>
                   </div>
                 </div>
                 <div className="ingredientsBTN">
@@ -189,7 +195,7 @@ function BeerCardDetails({
                   />
                 </div>
                 <div className="dishes">
-                  Food pairing
+                  <h4>Food pairing</h4>
                   {foodPairing !== undefined ? (
                     foodPairing.map((dish) => (
                       <li key={`dish${dish}`}>{dish}</li>
@@ -202,7 +208,7 @@ function BeerCardDetails({
                   )}
                 </div>
                 <div className="foodPairingBTN">
-                  <button className="btn" type="button">
+                  <button className="btn" type="button" onClick={handleClick}>
                     Add to Favorite{" "}
                   </button>
                 </div>
@@ -251,6 +257,7 @@ BeerCardDetails.propTypes = {
   ingredients: PropTypes.string.isRequired,
   foodPairing: PropTypes.string.isRequired,
   tagline: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default BeerCardDetails;
