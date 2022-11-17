@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "../styles/HomePage.css";
+import "../styles/HomePopUp.css";
 import HomePopUp from "@components/HomePopUp";
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
 import BeerCardDetails from "@components/beer-card-elmt/BeerCardDetails";
 import Footer from "@components/Footer";
-
+import Anchor from "@components/Anchor";
 import axios from "axios";
-
 import FiltersComponent from "../components/filters-comp/FiltersComponent";
 
 function HomePage() {
@@ -21,7 +21,9 @@ function HomePage() {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/beer").then((res) => {
+
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/beer`).then((res) => {
+
       setBeeArray(res.data);
     });
   }, []);
@@ -74,11 +76,33 @@ function HomePage() {
     callback: colorInput,
   };
 
+
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 400) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    });
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => {
     setIsOpen(!isOpen);
   };
+
 
   const handleClick = (event, index) => {
     event.stopPropagation();
@@ -164,8 +188,10 @@ function HomePage() {
               <BeerCard
                 key={element.id}
                 name={element.name}
+                imageUrl={`${import.meta.env.VITE_BACKEND_URL}/images/${
+                  element.imageUrl
+                }`}
                 index={i}
-                imageUrl={`http://localhost:5000/images/${element.imageUrl}`}
                 ibu={element.ibu}
                 firstBrewed={element.firstBrewed}
                 abv={element.abv}
@@ -200,6 +226,7 @@ function HomePage() {
       ) : null}
       <Footer />
       {isOpen && <HomePopUp onClose={handleClose} />}
+      {showButton && <Anchor onScrollToTop={scrollToTop} />}
     </div>
   );
 }
