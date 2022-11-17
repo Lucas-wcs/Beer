@@ -24,8 +24,8 @@ function BitterFilter({ bitterChange, maxBitterValue, minBitterValue }) {
 
 BitterFilter.propTypes = {
   bitterChange: PropTypes.func.isRequired,
-  minBitterValue: PropTypes.func.isRequired,
-  maxBitterValue: PropTypes.func.isRequired,
+  minBitterValue: PropTypes.number.isRequired,
+  maxBitterValue: PropTypes.number.isRequired,
 };
 
 export default BitterFilter;

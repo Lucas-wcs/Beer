@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles/HomePage.css";
 import "../styles/HomePopUp.css";
+import HomePopUp from "@components/HomePopUp";
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
-import HomePopUp from "@components/HomePopUp";
+import BeerCardDetails from "@components/beer-card-elmt/BeerCardDetails";
 import Footer from "@components/Footer";
 import Anchor from "@components/Anchor";
 import axios from "axios";
@@ -11,9 +12,18 @@ import FiltersComponent from "../components/filters-comp/FiltersComponent";
 
 function HomePage() {
   const [beerArray, setBeeArray] = useState([]);
+  const [beerItem, setBeerItem] = useState();
+
+  const openBeer = (index) => {
+    const temp = { ...beerArray[index] };
+    temp.index = index;
+    setBeerItem(temp);
+  };
 
   useEffect(() => {
+
     axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/beer`).then((res) => {
+
       setBeeArray(res.data);
     });
   }, []);
@@ -66,6 +76,7 @@ function HomePage() {
     callback: colorInput,
   };
 
+
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -85,10 +96,25 @@ function HomePage() {
     });
   };
 
+
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => {
     setIsOpen(!isOpen);
+  };
+
+
+  const handleClick = (event, index) => {
+    event.stopPropagation();
+    const temp = [...beerArray];
+    temp[index].heart = !temp[index].heart;
+    setBeeArray(temp);
+  };
+
+  const [favorite, setFavorite] = useState(true);
+  const handleFavorite = (event) => {
+    event.stopPropagation();
+    setFavorite(!favorite);
   };
 
   return (
@@ -101,6 +127,8 @@ function HomePage() {
           col={col}
           alc={alc}
           bit={bit}
+          handleFavorite={handleFavorite}
+          favorite={favorite}
           resetEvent={(ev) => clearFilter(ev)}
         />
         <button
@@ -148,22 +176,54 @@ function HomePage() {
               }
               return null;
             })
-            .map((element) => (
+
+            /* .filter((elem) => {
+              if (!favorite && elem.heart) {
+                elem
+              }
+              null
+            }) */
+
+            .map((element, i) => (
               <BeerCard
                 key={element.id}
                 name={element.name}
                 imageUrl={`${import.meta.env.VITE_BACKEND_URL}/images/${
                   element.imageUrl
                 }`}
+                index={i}
                 ibu={element.ibu}
                 firstBrewed={element.firstBrewed}
                 abv={element.abv}
                 srm={element.srm}
+                tagline={element.tagline}
                 description={element.description}
+                ingredients={element.ingredients}
+                foodPairing={element.foodPairing}
+                clickEvent={openBeer}
+                handleClick={(event) => handleClick(event, i)}
+                heart={element.heart}
               />
             ))}
         </div>
       </div>
+      {beerItem ? (
+        <BeerCardDetails
+          name={beerItem.name}
+          ibu={beerItem.ibu}
+          firstBrewed={beerItem.firstBrewed}
+          abv={beerItem.abv}
+          srm={beerItem.srm}
+          imageUrl={`http://localhost:5000/images/${beerItem.imageUrl}`}
+          description={beerItem.description}
+          tagline={beerItem.tagline}
+          ingredients={beerItem.ingredients}
+          foodPairing={beerItem.foodPairing}
+          close={() => setBeerItem(null)}
+          handleClick={(event) => handleClick(event, beerItem.index)}
+          favorite={beerItem.favorite}
+        />
+      ) : null}
       <Footer />
       {isOpen && <HomePopUp onClose={handleClose} />}
       {showButton && <Anchor onScrollToTop={scrollToTop} />}

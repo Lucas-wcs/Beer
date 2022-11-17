@@ -25,8 +25,8 @@ function AlcFilter({ alcChange, maxAlcValue, minAlcValue }) {
 
 AlcFilter.propTypes = {
   alcChange: PropTypes.func.isRequired,
-  minAlcValue: PropTypes.func.isRequired,
-  maxAlcValue: PropTypes.func.isRequired,
+  minAlcValue: PropTypes.number.isRequired,
+  maxAlcValue: PropTypes.number.isRequired,
 };
 
 export default AlcFilter;
