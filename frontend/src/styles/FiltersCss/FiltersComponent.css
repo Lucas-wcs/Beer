@@ -52,28 +52,9 @@
   width: 8rem;
 }
 
-.popupButton {
-  background-color: var(--background-color-light);
-  color: var(--accent-color-2);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  font-family: var(--font-text-family);
-  display: flex;
-}
-
-.popupButton,
-span {
-  vertical-align: bottom;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
-.heart {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.favorite-button {
+  z-index: 3;
+  cursor: pointer;
 }
 
 /* ==========================media mobile=====================================*/

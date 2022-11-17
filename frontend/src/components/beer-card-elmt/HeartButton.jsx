@@ -1,18 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
-function HeartButton() {
-  const [heart, setHeart] = useState(true);
-  const HandleClick = (event) => {
-    event.stopPropagation();
-    setHeart(!heart);
-  };
-
+function HeartButton({ heart, handleClick }) {
   return (
     <span
-      onClick={HandleClick}
+      onClick={handleClick}
       className="heart-button"
       role="button"
-      onKeyDown={HandleClick}
+      onKeyDown={handleClick}
       tabIndex={0}
     >
       {heart ? (
@@ -45,5 +40,8 @@ function HeartButton() {
     </span>
   );
 }
-
+HeartButton.propTypes = {
+  heart: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
 export default HeartButton;

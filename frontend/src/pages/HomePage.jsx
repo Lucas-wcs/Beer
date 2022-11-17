@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/HomePage.css";
-
+import HomePopUp from "@components/HomePopUp";
 import Header from "@components/Header";
 import BeerCard from "@components/beer-card-elmt/BeerCard";
 import BeerCardDetails from "@components/beer-card-elmt/BeerCardDetails";
@@ -72,6 +72,24 @@ function HomePage() {
     callback: colorInput,
   };
 
+  const [isOpen, setIsOpen] = useState(true);
+
+  const handleClose = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const [heart, setHeart] = useState(true);
+  const handleClick = (event) => {
+    event.stopPropagation();
+    setHeart(!heart);
+  };
+
+  const [favorite, setFavorite] = useState(true);
+  const handleFavorite = (event) => {
+    event.stopPropagation();
+    setFavorite(!favorite);
+  };
+
   return (
     <div id="body">
       <Header />
@@ -82,8 +100,17 @@ function HomePage() {
           col={col}
           alc={alc}
           bit={bit}
+          handleFavorite={handleFavorite}
+          favorite={favorite}
           resetEvent={(ev) => clearFilter(ev)}
         />
+        <button
+          className="PopUpButton"
+          onClick={() => setIsOpen(true)}
+          type="button"
+        >
+          ?
+        </button>
         <img
           className="dog"
           src="src/assets/oh-my-brew-icon-dog-ok.png"
@@ -122,6 +149,13 @@ function HomePage() {
               }
               return null;
             })
+            /* .filter((elem) => {
+              if (!favorite) {
+                if (elem.heart === false)
+                  return elem;
+              }
+              return null;
+            }) */
             .map((element, i) => (
               <BeerCard
                 key={element.id}
@@ -135,7 +169,10 @@ function HomePage() {
                 tagline={element.tagline}
                 description={element.description}
                 ingredients={element.ingredients}
+                foodPairing={element.foodPairing}
                 clickEvent={openBeer}
+                HandleClick={handleClick}
+                heart={element.heart}
               />
             ))}
         </div>
@@ -151,10 +188,12 @@ function HomePage() {
           description={beerItem.description}
           tagline={beerItem.tagline}
           ingredients={beerItem.ingredients}
+          foodPairing={beerItem.foodPairing}
           close={() => setBeerItem(null)}
         />
       ) : null}
       <Footer />
+      {isOpen && <HomePopUp onClose={handleClose} />}
     </div>
   );
 }
