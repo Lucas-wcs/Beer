@@ -172,12 +172,12 @@ function HomePage() {
               return null;
             })
 
-            /* .filter((elem) => {
-              if (!favorite && elem.heart) {
-                elem
+            .filter((elem) => {
+              if (!favorite) {
+                return elem.heart;
               }
-              null
-            }) */
+              return true;
+            })
 
             .map((element, i) => (
               <BeerCard
