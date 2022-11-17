@@ -21,9 +21,7 @@ function HomePage() {
   };
 
   useEffect(() => {
-
     axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/beer`).then((res) => {
-
       setBeeArray(res.data);
     });
   }, []);
@@ -76,7 +74,6 @@ function HomePage() {
     callback: colorInput,
   };
 
-
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -96,13 +93,11 @@ function HomePage() {
     });
   };
 
-
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => {
     setIsOpen(!isOpen);
   };
-
 
   const handleClick = (event, index) => {
     event.stopPropagation();
