@@ -1,9 +1,14 @@
 import React from "react";
 import "../styles/HomePopUp.css";
 import PropTypes from "prop-types";
+import { useLocation } from "react-router-dom";
 import video from "../assets/oh-my-brew-video-tutorial-test.mp4";
 
 export default function HomePopUp({ onClose }) {
+  const location = useLocation();
+
+  if (location.pathname === "/home") return null;
+
   return (
     <div className="PopUpSection">
       <div className="PopUp">
@@ -30,18 +35,19 @@ export default function HomePopUp({ onClose }) {
           </svg>
         </div>
         <div className="PopUpContent">
-          <h3>Welcome on Oh My Brew!</h3>
+          <h3>Welcome to Oh My Brew!</h3>
           <div className="PopUpAllParts">
             <video width="100%" controls autoPlay muted>
               <source src={video} type="video/mp4" />
             </video>
             <div className="PopUpRightPart">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et
-                vestibulum velit, dictum cursus ex. Nullam pharetra pharetra
-                venenatis. Duis est metus, convallis eget vehicula vel,
-                pellentesque non diam. Aliquam laoreet, mi ut rhoncus laoreet,
-                sem nibh fringilla lacus, a tincidunt lorem metus ac velit.
+                To sort beer by preferences, you can use the 3 filters at your
+                disposal. you can filter your beers by alcohol degree,
+                bitterness and color. Click on the heart or the button "add to
+                favorites" to retrieve your beer on the main page. You can also
+                check ingredients and food pairing and ultimately print beer
+                recipes and brew your own beer! Happy brew!{" "}
               </p>
               <button onClick={onClose} type="button">
                 Start now!

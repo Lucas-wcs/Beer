@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function BeerCardDetails({
+  id,
   name,
   imageUrl,
   tagline,
@@ -15,6 +16,7 @@ function BeerCardDetails({
   foodPairing,
   close,
   handleClick,
+  heart,
 }) {
   const [back, setBack] = useState(true);
 
@@ -26,6 +28,35 @@ function BeerCardDetails({
     <div className="beerCardDetailsContainer">
       {back ? (
         <div className="beerCardDetails">
+          <div>
+            {!heart ? (
+              <svg
+                width="25"
+                height="22"
+                viewBox="0 0 25 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.10233 0C2.84489 0 0 3.472 0 7.33643C0 10.9622 2.07302 14.0954 4.60759 16.5689C7.14215 19.0419 10.1672 20.8751 12.2426 21.9387C12.4043 22.0204 12.5957 22.0204 12.7574 21.9387C14.833 20.8749 17.8579 19.0417 20.3924 16.5689C22.927 14.0958 25 10.9623 25 7.33643C25 3.47195 22.1551 0 17.8977 0C15.3879 0 13.7207 1.27113 12.4999 2.98919C11.2792 1.27108 9.61199 0 7.10233 0Z"
+                  fill="#FFEBAF"
+                />
+              </svg>
+            ) : (
+              <svg
+                width="25"
+                height="22"
+                viewBox="0 0 25 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.10233 0C2.84489 0 0 3.472 0 7.33643C0 10.9622 2.07302 14.0954 4.60759 16.5689C7.14215 19.0419 10.1672 20.8751 12.2426 21.9387C12.4043 22.0204 12.5957 22.0204 12.7574 21.9387C14.833 20.8749 17.8579 19.0417 20.3924 16.5689C22.927 14.0958 25 10.9623 25 7.33643C25 3.47195 22.1551 0 17.8977 0C15.3879 0 13.7207 1.27113 12.4999 2.98919C11.2792 1.27108 9.61199 0 7.10233 0Z"
+                  fill="#FF7E7C"
+                />
+              </svg>
+            )}
+          </div>
           <div className="btnCroix">
             <div
               onClick={close}
@@ -113,6 +144,35 @@ function BeerCardDetails({
       ) : (
         <div className="card-is-flipped">
           <div className="flippedContent">
+            <div>
+              {!heart ? (
+                <svg
+                  width="25"
+                  height="22"
+                  viewBox="0 0 25 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.10233 0C2.84489 0 0 3.472 0 7.33643C0 10.9622 2.07302 14.0954 4.60759 16.5689C7.14215 19.0419 10.1672 20.8751 12.2426 21.9387C12.4043 22.0204 12.5957 22.0204 12.7574 21.9387C14.833 20.8749 17.8579 19.0417 20.3924 16.5689C22.927 14.0958 25 10.9623 25 7.33643C25 3.47195 22.1551 0 17.8977 0C15.3879 0 13.7207 1.27113 12.4999 2.98919C11.2792 1.27108 9.61199 0 7.10233 0Z"
+                    fill="#FFEBAF"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  width="25"
+                  height="22"
+                  viewBox="0 0 25 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.10233 0C2.84489 0 0 3.472 0 7.33643C0 10.9622 2.07302 14.0954 4.60759 16.5689C7.14215 19.0419 10.1672 20.8751 12.2426 21.9387C12.4043 22.0204 12.5957 22.0204 12.7574 21.9387C14.833 20.8749 17.8579 19.0417 20.3924 16.5689C22.927 14.0958 25 10.9623 25 7.33643C25 3.47195 22.1551 0 17.8977 0C15.3879 0 13.7207 1.27113 12.4999 2.98919C11.2792 1.27108 9.61199 0 7.10233 0Z"
+                    fill="#FF7E7C"
+                  />
+                </svg>
+              )}
+            </div>
             <div className="btnCroix">
               <div
                 onClick={close}
@@ -148,41 +208,28 @@ function BeerCardDetails({
                 <div className="ingredients">
                   <div>
                     <h4>Ingredients:</h4>
-                    <div>
-                      <p>Malt:</p>
+                    <div className="malts">
+                      <div />
+                      <p>Malt: </p>
                       {ingredients.malt.map((malts) => (
-                        <li key={`malts${malts.name}`}>{malts.name}</li>
+                        <p key={`malts${malts.name}`}>{malts.name}, </p>
                       ))}
                     </div>
-                    <div>
-                      <p>Hops:</p>
+                    <div className="hops">
+                      <p>Hops: </p>
                       {ingredients.hops.map((hops) => (
-                        <li key={`hops${hops.name}`}>{hops.name}</li>
+                        <p key={`hops${hops.name}`}>{hops.name},</p>
                       ))}
                     </div>
                     <div>
-                      <p>Yeast:</p>
+                      <p>Yeast: </p>
                       <li>{ingredients.yeast}</li>
                     </div>
                   </div>
                 </div>
                 <div className="ingredientsBTN">
                   <button className="btn" type="button">
-                    <div>Download the recipe </div>
-                    <div>
-                      <svg
-                        width="24"
-                        height="26"
-                        viewBox="0 0 24 26"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M22.5 22.3837H1.5C1.10218 22.3837 0.720645 22.5405 0.43934 22.8195C0.158036 23.0986 0 23.4771 0 23.8718C0 24.2664 0.158036 24.6449 0.43934 24.924C0.720645 25.2031 1.10218 25.3599 1.5 25.3599H22.5C22.8978 25.3599 23.2794 25.2031 23.5607 24.924C23.842 24.6449 24 24.2664 24 23.8718C24 23.4771 23.842 23.0986 23.5607 22.8195C23.2794 22.5405 22.8978 22.3837 22.5 22.3837ZM10.935 18.9759C11.0777 19.1114 11.2459 19.2176 11.43 19.2884C11.6096 19.3672 11.8037 19.4078 12 19.4078C12.1963 19.4078 12.3905 19.3672 12.57 19.2884C12.7541 19.2176 12.9223 19.1114 13.065 18.9759L19.065 13.0236C19.3475 12.7433 19.5061 12.3633 19.5061 11.967C19.5061 11.5707 19.3475 11.1907 19.065 10.9105C18.7825 10.6302 18.3995 10.4728 18 10.4728C17.6005 10.4728 17.2175 10.6302 16.935 10.9105L13.5 14.3331V1.84796C13.5 1.45329 13.342 1.07479 13.0607 0.795716C12.7794 0.516644 12.3978 0.359863 12 0.359863C11.6022 0.359863 11.2206 0.516644 10.9393 0.795716C10.658 1.07479 10.5 1.45329 10.5 1.84796V10.4715V14.3331L7.065 10.9105C6.92514 10.7717 6.75911 10.6616 6.57638 10.5866C6.39364 10.5115 6.19779 10.4728 6 10.4728C5.80221 10.4728 5.60636 10.5115 5.42363 10.5866C5.24089 10.6616 5.07486 10.7717 4.935 10.9105C4.79514 11.0492 4.6842 11.2139 4.60851 11.3952C4.53282 11.5765 4.49386 11.7708 4.49386 11.967C4.49386 12.1632 4.53282 12.3575 4.60851 12.5388C4.6842 12.7201 4.79514 12.8848 4.935 13.0236L10.935 18.9759Z"
-                          fill="white"
-                        />
-                      </svg>
-                    </div>
+                    <Link to={`/recipe/${id}`}>Recipe</Link>
                   </button>
                 </div>
               </div>
@@ -196,9 +243,7 @@ function BeerCardDetails({
                 <div className="dishes">
                   <h4>Food pairing</h4>
                   {foodPairing !== undefined ? (
-                    foodPairing.map((dish) => (
-                      <li key={`dish${dish}`}>{dish}</li>
-                    ))
+                    foodPairing.map((dish) => <p key={`dish${dish}`}>{dish}</p>)
                   ) : (
                     <p>
                       No food pairing : drink it without food or with your
@@ -246,6 +291,7 @@ function BeerCardDetails({
 
 BeerCardDetails.propTypes = {
   close: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   ibu: PropTypes.number.isRequired,
@@ -257,6 +303,7 @@ BeerCardDetails.propTypes = {
   foodPairing: PropTypes.string.isRequired,
   tagline: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
+  heart: PropTypes.func.isRequired,
 };
 
 export default BeerCardDetails;

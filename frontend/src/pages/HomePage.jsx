@@ -8,13 +8,18 @@ import BeerCardDetails from "@components/beer-card-elmt/BeerCardDetails";
 import Footer from "@components/Footer";
 import Anchor from "@components/Anchor";
 import axios from "axios";
+import { useNavigate, useLocation } from "react-router-dom";
 import FiltersComponent from "../components/filters-comp/FiltersComponent";
 
 function HomePage() {
   const [beerArray, setBeeArray] = useState([]);
 
+  const location = useLocation();
+
   const [filteredBeer, setFilteredBeer] = useState([]);
   const [beerItem, setBeerItem] = useState();
+
+  const navigate = useNavigate();
 
   let filterAgain;
 
@@ -119,12 +124,18 @@ function HomePage() {
   };
 
   const clearFilter = () => {
-    setMinAlcValue(0);
-    setMaxAlcValue(11);
-    setMinBitterValue(0);
-    setMaxBitterValue(110);
-    setMinColValue(0);
-    setMaxColValue(45);
+    if (location.pathname === "/home") {
+      window.location.reload();
+    }
+    navigate("/home");
+  };
+
+  const handleClick = (event, id) => {
+    event.stopPropagation();
+    const temp = [...beerArray];
+    const indice = temp.findIndex((biere) => biere.id === id);
+    temp[indice].heart = !temp[indice].heart;
+    setBeeArray(temp);
   };
 
   const [showButton, setShowButton] = useState(false);
@@ -150,13 +161,6 @@ function HomePage() {
 
   const handleClose = () => {
     setIsOpen(!isOpen);
-  };
-
-  const handleClick = (event, index) => {
-    event.stopPropagation();
-    const temp = [...beerArray];
-    temp[index].heart = !temp[index].heart;
-    setBeeArray(temp);
   };
 
   return (
@@ -196,6 +200,7 @@ function HomePage() {
                 element.imageUrl
               }`}
               index={i}
+              id={element.id}
               ibu={element.ibu}
               firstBrewed={element.firstBrewed}
               abv={element.abv}
@@ -205,7 +210,7 @@ function HomePage() {
               ingredients={element.ingredients}
               foodPairing={element.foodPairing}
               clickEvent={openBeer}
-              handleClick={(event) => handleClick(event, i)}
+              handleClick={(event) => handleClick(event, element.id)}
               heart={element.heart}
             />
           ))}
@@ -213,6 +218,7 @@ function HomePage() {
       </div>
       {beerItem ? (
         <BeerCardDetails
+          id={beerItem.id}
           name={beerItem.name}
           ibu={beerItem.ibu}
           firstBrewed={beerItem.firstBrewed}
@@ -224,8 +230,9 @@ function HomePage() {
           ingredients={beerItem.ingredients}
           foodPairing={beerItem.foodPairing}
           close={() => setBeerItem(null)}
-          handleClick={(event) => handleClick(event, beerItem.index)}
+          handleClick={(event) => handleClick(event, beerItem.id)}
           favorite={beerItem.favorite}
+          heart={beerItem.heart}
         />
       ) : null}
       <Footer />
