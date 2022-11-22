@@ -207,6 +207,7 @@ h5 {
 .beerCardDetails .marg {
   height: 90%;
 }
+
 .flippedContent {
   display: flex;
   flex-direction: column;
@@ -229,6 +230,16 @@ h5 {
   width: 45%;
   padding: 2rem;
   border-radius: 5%;
+}
+
+.malts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hops {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .foodPairing {

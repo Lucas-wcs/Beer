@@ -232,6 +232,7 @@ function HomePage() {
           close={() => setBeerItem(null)}
           handleClick={(event) => handleClick(event, beerItem.id)}
           favorite={beerItem.favorite}
+          heart={beerItem.heart}
         />
       ) : null}
       <Footer />
