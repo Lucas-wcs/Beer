@@ -171,7 +171,6 @@ function HomePage() {
       <Header />
       <div className="main">
         <h2>Oh my brew!</h2>
-        <h3 className="taglineWebsite">Let the dogs out!</h3>
         <FiltersComponent
           col={col}
           alc={alc}
