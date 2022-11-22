@@ -94,6 +94,11 @@
     align-items: center;
   }
 
+  .filter-mobile {
+    margin: 1px;
+    color: red;
+  }
+
   .color-filter {
     width: 100%;
   }
