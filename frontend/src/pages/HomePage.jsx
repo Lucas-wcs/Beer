@@ -213,6 +213,7 @@ function HomePage() {
       </div>
       {beerItem ? (
         <BeerCardDetails
+          id={beerItem.id}
           name={beerItem.name}
           ibu={beerItem.ibu}
           firstBrewed={beerItem.firstBrewed}
