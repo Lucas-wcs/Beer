@@ -8,13 +8,18 @@ import BeerCardDetails from "@components/beer-card-elmt/BeerCardDetails";
 import Footer from "@components/Footer";
 import Anchor from "@components/Anchor";
 import axios from "axios";
+import { useNavigate, useLocation } from "react-router-dom";
 import FiltersComponent from "../components/filters-comp/FiltersComponent";
 
 function HomePage() {
   const [beerArray, setBeeArray] = useState([]);
 
+  const location = useLocation();
+
   const [filteredBeer, setFilteredBeer] = useState([]);
   const [beerItem, setBeerItem] = useState();
+
+  const navigate = useNavigate();
 
   let filterAgain;
 
@@ -119,12 +124,10 @@ function HomePage() {
   };
 
   const clearFilter = () => {
-    setMinAlcValue(0);
-    setMaxAlcValue(11);
-    setMinBitterValue(0);
-    setMaxBitterValue(110);
-    setMinColValue(0);
-    setMaxColValue(45);
+    if (location.pathname === "/home") {
+      window.location.reload();
+    }
+    navigate("/home");
   };
 
   const handleClick = (event, id) => {
