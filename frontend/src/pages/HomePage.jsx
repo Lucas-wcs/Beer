@@ -127,6 +127,14 @@ function HomePage() {
     setMaxColValue(45);
   };
 
+  const handleClick = (event, id) => {
+    event.stopPropagation();
+    const temp = [...beerArray];
+    const indice = temp.findIndex((biere) => biere.id === id);
+    temp[indice].heart = !temp[indice].heart;
+    setBeeArray(temp);
+  };
+
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -150,13 +158,6 @@ function HomePage() {
 
   const handleClose = () => {
     setIsOpen(!isOpen);
-  };
-
-  const handleClick = (event, index) => {
-    event.stopPropagation();
-    const temp = [...beerArray];
-    temp[index].heart = !temp[index].heart;
-    setBeeArray(temp);
   };
 
   return (
@@ -196,6 +197,7 @@ function HomePage() {
                 element.imageUrl
               }`}
               index={i}
+              id={element.id}
               ibu={element.ibu}
               firstBrewed={element.firstBrewed}
               abv={element.abv}
@@ -205,7 +207,7 @@ function HomePage() {
               ingredients={element.ingredients}
               foodPairing={element.foodPairing}
               clickEvent={openBeer}
-              handleClick={(event) => handleClick(event, i)}
+              handleClick={(event) => handleClick(event, element.id)}
               heart={element.heart}
             />
           ))}
@@ -225,7 +227,7 @@ function HomePage() {
           ingredients={beerItem.ingredients}
           foodPairing={beerItem.foodPairing}
           close={() => setBeerItem(null)}
-          handleClick={(event) => handleClick(event, beerItem.index)}
+          handleClick={(event) => handleClick(event, beerItem.id)}
           favorite={beerItem.favorite}
         />
       ) : null}
