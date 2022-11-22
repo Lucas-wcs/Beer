@@ -38,6 +38,12 @@
   width: 60%;
 }
 
+.select-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .select {
   display: flex;
   gap: 30px;
