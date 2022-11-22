@@ -136,6 +136,9 @@ function HomePage() {
     const indice = temp.findIndex((biere) => biere.id === id);
     temp[indice].heart = !temp[indice].heart;
     setBeeArray(temp);
+    if (beerItem) {
+      setBeerItem({ ...beerItem, heart: !beerItem.heart });
+    }
   };
 
   const [showButton, setShowButton] = useState(false);

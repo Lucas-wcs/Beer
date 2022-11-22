@@ -117,7 +117,31 @@ h4 {
 }
 
 .brewColor {
-  background-color: brown;
+  background-color: var(--background-color-dark);
+  width: 50px;
+  height: 10px;
+}
+
+.brewColor2 {
+  background-color: var(--accent-color-2);
+  width: 50px;
+  height: 10px;
+}
+
+.brewColor3 {
+  background-color: var(--secondary-color-1);
+  width: 50px;
+  height: 10px;
+}
+
+.brewColor4 {
+  background-color: var(--secondary-color-2);
+  width: 50px;
+  height: 10px;
+}
+
+.brewColor5 {
+  background-color: var(--secondary-color-4);
   width: 50px;
   height: 10px;
 }
@@ -136,6 +160,18 @@ h5 {
 
 .brewColor {
   display: inline-block;
+}
+
+.bitter-cont {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.color-cont {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .beerCardDetailsContainer {
@@ -266,6 +302,14 @@ h5 {
 .btn {
   display: inline-block;
   flex-direction: row;
+  text-decoration: none;
+  color: white;
+}
+
+a,
+.btn {
+  text-decoration: none;
+  color: white;
 }
 
 .foodPairing button {

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import IbuImage from "./IbuImage";
+import ColorImage from "./ColorImage";
 
 function BeerCardDetails({
   id,
@@ -98,14 +100,20 @@ function BeerCardDetails({
                   <p className="alc">Alc: {abv}°</p>
                 </div>
                 <div className="brewDetails">
-                  <p>
-                    <h5>Bitterness:</h5> o o o o o IBU {ibu} (International
-                    Bitterness Unit)
+                  <p className="bitter-cont">
+                    <p>
+                      <span>Bitterness: </span>
+                    </p>{" "}
+                    <IbuImage ibu={ibu} /> {ibu} IBU (International Bitterness
+                    Unit)
                   </p>
                   <div>
-                    <p>
-                      <h5>Color:</h5> <div className="brewColor" /> SRM {srm}
-                      (European Brewery Convention)
+                    <p className="color-cont">
+                      <p>
+                        <span>Color: </span>
+                      </p>{" "}
+                      <ColorImage srm={srm} /> {srm} SRM (European Brewery
+                      Convention)
                     </p>
                   </div>
                 </div>
@@ -229,7 +237,9 @@ function BeerCardDetails({
                 </div>
                 <div className="ingredientsBTN">
                   <button className="btn" type="button">
-                    <Link to={`/recipe/${id}`}>Recipe</Link>
+                    <NavLink className="btn2" to={`/recipe/${id}`}>
+                      Look at the recipe !
+                    </NavLink>
                   </button>
                 </div>
               </div>
