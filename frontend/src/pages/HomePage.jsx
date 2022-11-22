@@ -136,6 +136,9 @@ function HomePage() {
     const indice = temp.findIndex((biere) => biere.id === id);
     temp[indice].heart = !temp[indice].heart;
     setBeeArray(temp);
+    if (beerItem) {
+      setBeerItem({ ...beerItem, heart: !beerItem.heart });
+    }
   };
 
   const [showButton, setShowButton] = useState(false);
@@ -168,7 +171,6 @@ function HomePage() {
       <Header />
       <div className="main">
         <h2>Oh my brew!</h2>
-        <h3 className="taglineWebsite">Let the dogs out!</h3>
         <FiltersComponent
           col={col}
           alc={alc}
