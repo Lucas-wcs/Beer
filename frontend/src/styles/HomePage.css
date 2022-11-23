@@ -28,12 +28,19 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 2rem;
 }
 
-.main img {
+.dog {
   margin-top: -5rem;
+  width: auto;
+  height: 150px;
   align-self: flex-end;
   margin-right: 3rem;
+  position: absolute;
+  right: 4rem;
+  top: 31.6rem;
+
 }
 
 h2 {
@@ -66,7 +73,7 @@ h2 {
 
 /* ==========================media mobile=====================================*/
 
-@media (min-width: 320px) and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .dog {
     display: none;
   }
