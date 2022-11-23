@@ -407,11 +407,13 @@ a,
   .beerCardDetails {
     padding: 0px;
     height: auto;
+    width: 95vw;
   }
 
   .card-is-flipped {
     padding: 0px;
     height: auto;
+    width: 95vw;
   }
 
   .title {
