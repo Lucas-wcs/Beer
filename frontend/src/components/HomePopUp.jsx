@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/HomePopUp.css";
 import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
-import video from "../assets/oh-my-brew-video-tutorial-test.mp4";
+import video from "../assets/oh-my-brew-video-tutorial.mp4";
 
 export default function HomePopUp({ onClose }) {
   const location = useLocation();
