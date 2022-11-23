@@ -145,24 +145,50 @@ function BeerCardDetails({
                     alt="ingredients"
                   />
                 </div>
+                <h4>Ingredients:</h4>
                 <div className="ingredients">
-                  <div>
-                    <h4>Ingredients:</h4>
-                    <div>
-                      <p>Malt:</p>
-                      {ingredients.malt.map((malts) => (
-                        <li key={`malts${malts.name}`}>{malts.name}</li>
-                      ))}
+                  <div className="ingredientsDetails">
+                    <div className="malt">
+                      <img
+                        src=".\src\assets\oh-my-brew-icon-malt.png"
+                        alt="malt"
+                      />
+
+                      <div className="maltContent">
+                        <p>
+                          <span>Malt:</span>
+                        </p>{" "}
+                        {ingredients.malt.map((malts) => (
+                          <p key={`malts${malts.name}`}>{malts.name},</p>
+                        ))}
+                      </div>
                     </div>
-                    <div>
-                      <p>Hops:</p>
-                      {ingredients.hops.map((hops) => (
-                        <li key={`hops${hops.name}`}>{hops.name}</li>
-                      ))}
+                    <div className="hops">
+                      <img
+                        src=".\src\assets\oh-my-brew-icon-hops.png"
+                        alt="hop"
+                      />
+
+                      <div className="hopsContent">
+                        <p>
+                          <span>Hops:</span>
+                        </p>{" "}
+                        {ingredients.hops.map((hops) => (
+                          <p key={`hops${hops.name}`}>{hops.name},</p>
+                        ))}
+                      </div>
                     </div>
-                    <div>
-                      <p>Yeast:</p>
-                      <li>{ingredients.yeast}</li>
+                    <div className="yeast">
+                      <img
+                        src=".\src\assets\oh-my-brew-icon-yeast.png"
+                        alt="yeast"
+                      />
+                      <div className="yeastContent">
+                        <p>
+                          <span>Yeast:</span>
+                        </p>
+                        <p>{ingredients.yeast}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -186,30 +212,37 @@ function BeerCardDetails({
                   </button>
                 </div>
               </div>
-              <div className="foodPairing">
-                <div className="foodPairingIMG">
-                  <img
-                    src="src/assets/oh-my-brew-icon-food-pairing.png"
-                    alt="ingredients"
-                  />
+              <div className="rightSide">
+                <div className="foodPairing">
+                  <div className="foodPairingIMG">
+                    <img
+                      src="src/assets/oh-my-brew-icon-food-pairing.png"
+                      alt="ingredients"
+                    />
+                  </div>
+                  <div className="dishes">
+                    <h4>Food pairing</h4>
+                    {foodPairing !== undefined ? (
+                      foodPairing.map((dish) => (
+                        <div className="listDishes">
+                          <div>-</div>
+                          <p key={`dish${dish}`}>{dish}</p>
+                        </div>
+                      ))
+                    ) : (
+                      <p>
+                        No food pairing : drink it without food or with your
+                        favorite dish!
+                      </p>
+                    )}
+                  </div>
                 </div>
-                <div className="dishes">
-                  <h4>Food pairing</h4>
-                  {foodPairing !== undefined ? (
-                    foodPairing.map((dish) => (
-                      <li key={`dish${dish}`}>{dish}</li>
-                    ))
-                  ) : (
-                    <p>
-                      No food pairing : drink it without food or with your
-                      favorite dish!
-                    </p>
-                  )}
-                </div>
-                <div className="foodPairingBTN">
-                  <button className="btn" type="button" onClick={handleClick}>
-                    Add to Favorite{" "}
-                  </button>
+                <div className="favoriteBTN">
+                  <div>
+                    <button className="btn" type="button" onClick={handleClick}>
+                      Add to Favorite{" "}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
