@@ -144,22 +144,20 @@ body::before {
 /* =============================Logo=====================================*/
 
 .logo {
-  width: 40%;
-  height: auto;
-  margin-top: 5%;
+  padding: 10rem 2rem 4rem 2rem;
 }
 
 .logo svg {
-  width: 100%;
+  width: 20rem;
   height: auto;
-  margin: 0;
-  padding: 0;
 }
 
 /* =============================Gif=====================================*/
 
 .gif {
-  margin: 30px;
+  margin: 4rem;
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-button);
 }
 
 /* =============================Button=====================================*/
@@ -203,7 +201,7 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 35px 5% 35px 5%;
+  padding: 4rem;
 }
 
 .ageGate-title-off {
@@ -229,4 +227,20 @@ h1 {
 /* ==========================media mobile=====================================*/
 
 @media (min-width: 320px) and (max-width: 600px) {
+  .logo {
+    padding: 6rem 2rem 2rem 2rem;
+  }
+
+  .logo svg {
+    width: 10rem;
+    height: auto;
+  }
+
+  .ageGate-title-on {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem 2rem 2rem 2rem;
+  }
 }
