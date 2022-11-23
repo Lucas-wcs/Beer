@@ -65,7 +65,7 @@ function Recipe() {
       {beer.map((binouze) => (
         <div className="contentCard">
           <div className="header">
-            <div className="recipe">
+            <div className="contentRecipe">
               <p>Recipe</p>
             </div>
             <div>
@@ -90,36 +90,40 @@ function Recipe() {
               <div className="partContentCaracteristics">
                 <div className="column">
                   <p>
-                    <span>abv:</span> {binouze.abv}
+                    <span className="boldHeading">abv:</span> {binouze.abv}
                   </p>
                   <p>
-                    <span>ibu:</span> {binouze.ibu}
+                    <span className="boldHeading">ibu:</span> {binouze.ibu}
                   </p>
                   <p>
-                    <span>srm:</span> {binouze.srm}
-                  </p>
-                </div>
-                <div className="column">
-                  <p>
-                    <span>Target Fg:</span> {binouze.targetFg}
-                  </p>
-                  <p>
-                    <span>Target Og:</span> {binouze.targetOg}
-                  </p>
-                  <p>
-                    <span>pH:</span> {binouze.ph}
+                    <span className="boldHeading">srm:</span> {binouze.srm}
                   </p>
                 </div>
                 <div className="column">
                   <p>
-                    <span>Attenuation level:</span> {binouze.attenuationLevel}
+                    <span className="boldHeading">Target Fg:</span>{" "}
+                    {binouze.targetFg}
                   </p>
                   <p>
-                    <span>Volume: </span>
+                    <span className="boldHeading">Target Og:</span>{" "}
+                    {binouze.targetOg}
+                  </p>
+                  <p>
+                    <span className="boldHeading">pH:</span> {binouze.ph}
+                  </p>
+                </div>
+                <div className="column">
+                  <p>
+                    <span className="boldHeading">Attenuation level:</span>{" "}
+                    {binouze.attenuationLevel}
+                  </p>
+                  <p>
+                    <span className="boldHeading">Volume: </span>
                     {binouze.volume.value}l
                   </p>
                   <p>
-                    <span>Boil Volume:</span> {binouze.boilVolume.value}l
+                    <span className="boldHeading">Boil Volume:</span>{" "}
+                    {binouze.boilVolume.value}l
                   </p>
                 </div>
                 <div className="column">
@@ -132,21 +136,21 @@ function Recipe() {
             <h4 className="partName">Method</h4>
             <div className="partContent">
               <p>
-                <span>Mash temperature:</span>{" "}
+                <span className="boldHeading">Mash temperature:</span>{" "}
                 {binouze.method.mashTemp.map((deg) => {
                   return deg.temp.value;
                 })}{" "}
                 °C
               </p>
               <p>
-                <span>Mash duration:</span>{" "}
+                <span className="boldHeading">Mash duration:</span>{" "}
                 {binouze.method.mashTemp.map((dur) => {
                   return dur.duration;
                 })}{" "}
                 min
               </p>
               <p>
-                <span>Fermentation:</span>{" "}
+                <span className="boldHeading">Fermentation:</span>{" "}
                 {binouze.method.fermentation.temp.value}°C
               </p>
             </div>
@@ -161,7 +165,7 @@ function Recipe() {
                 </div>
                 {binouze.ingredients.malt.map((malts) => (
                   <li key={`malts${malts.name}`}>
-                    <span>{malts.name}: </span>
+                    <span className="boldHeading">{malts.name}: </span>
                     {malts.amount.value}kg
                   </li>
                 ))}
@@ -174,7 +178,8 @@ function Recipe() {
                 </div>
                 {binouze.ingredients.hops.map((hops) => (
                   <li key={`hops${hops.name}`}>
-                    <span>{hops.name}: </span> {hops.amount.value}g,
+                    <span className="boldHeading">{hops.name}: </span>{" "}
+                    {hops.amount.value}g,
                     <br />
                     <span className="hopsAdd">Add: {hops.add} - </span>
                     <span className="hopsAdd">Attribute: {hops.attribute}</span>
@@ -188,7 +193,9 @@ function Recipe() {
                   <h4>Yeast:</h4>
                 </div>
                 <li>
-                  <span>{binouze.ingredients.yeast}</span>
+                  <span className="boldHeading">
+                    {binouze.ingredients.yeast}
+                  </span>
                 </li>
               </div>
             </div>
