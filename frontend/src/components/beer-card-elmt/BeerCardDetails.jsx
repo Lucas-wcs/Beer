@@ -257,7 +257,6 @@ function BeerCardDetails({
                         </p>
                         <p>{ingredients.yeast}</p>
                       </div>
-
                     </div>
                   </div>
                 </div>
