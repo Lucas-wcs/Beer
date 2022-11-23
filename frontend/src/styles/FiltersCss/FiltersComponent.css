@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: baseline;
+  gap: 1rem;
 }
 
 .bit-container {
@@ -17,6 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: baseline;
+  gap: 1rem;
 }
 
 .col-container {
@@ -24,6 +26,7 @@
   display: flex;
   justify-content: center;
   align-items: baseline;
+  gap: 1rem;
 }
 
 .color-filter {
@@ -76,6 +79,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 0rem;
   }
 
   .bit-container {
@@ -84,6 +88,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 0rem;
   }
 
   .col-container {
@@ -92,6 +97,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 0rem;
   }
 
   .color-filter {
