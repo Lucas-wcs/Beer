@@ -1,0 +1,91 @@
+:root {
+  --background-color-light: #fff8e3;
+  --background-color-dark: #ffebaf;
+  --accent-color-1: #ff7e7c;
+  --accent-color-2: #f29f05;
+  --secondary-color-1: #bf5b04;
+  --secondary-color-2: #8c4820;
+  --secondary-color-3: #592c1c;
+  --secondary-color-4: #27140c;
+  --shadow-card: 4px 4px 20px rgba(242, 159, 5, 0.25);
+  --shadow-button: 4px 4px 20px rgba(191, 91, 4, 0.25);
+  --font-title-family: "Anton", sans-serif;
+  --font-text-family: "Cabin", sans-serif;
+  --font-text-weight-bold: 700;
+  --font-text-weight-regular: 400;
+}
+
+.back-home {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  z-index: 2;
+  cursor: pointer;
+  font-family: var(--font-title-family);
+  text-decoration: none;
+  color: var(--secondary-color-4);
+}
+
+.cont {
+  width: 70%;
+  height: 80%;
+  margin: 50px auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.imgIcon {
+  margin-top: 25px;
+}
+
+h4 {
+  margin: 15px;
+}
+
+.recipe-title {
+  color: var(--accent-color-2);
+  margin: 0px;
+}
+
+.caract {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: var(--background-color-light);
+  margin: 20px auto;
+}
+
+.aa {
+  display: flex;
+  flex-direction: column;
+}
+
+.bb {
+  display: flex;
+  flex-direction: column;
+}
+
+.cc {
+  display: flex;
+  flex-direction: column;
+}
+
+.caract2 {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.hops-add {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-style: italic;
+}

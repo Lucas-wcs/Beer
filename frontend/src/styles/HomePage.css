@@ -36,6 +36,10 @@ body {
   margin-right: 3rem;
 }
 
+h2 {
+  padding-bottom: 2rem;
+}
+
 .beerDisplay {
   display: flex;
   align-content: center;

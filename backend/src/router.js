@@ -6,7 +6,9 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  res.status(200).send(data.filter((beer) => beer.id === req.params.id));
+  res
+    .status(200)
+    .send(data.filter((beer) => beer.id.toString() === req.params.id));
 });
 
 router.get("/image/:filename", (req, res) => {

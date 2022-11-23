@@ -25,6 +25,7 @@
   box-shadow: var(--shadow-card);
   border-radius: 10px;
   transition: scale 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .beerCardSmall:hover {
@@ -116,7 +117,31 @@ h4 {
 }
 
 .brewColor {
-  background-color: brown;
+  background-color: var(--background-color-dark);
+  width: 50px;
+  height: 10px;
+}
+
+.brewColor2 {
+  background-color: var(--accent-color-2);
+  width: 50px;
+  height: 10px;
+}
+
+.brewColor3 {
+  background-color: var(--secondary-color-1);
+  width: 50px;
+  height: 10px;
+}
+
+.brewColor4 {
+  background-color: var(--secondary-color-2);
+  width: 50px;
+  height: 10px;
+}
+
+.brewColor5 {
+  background-color: var(--secondary-color-4);
   width: 50px;
   height: 10px;
 }
@@ -135,6 +160,18 @@ h5 {
 
 .brewColor {
   display: inline-block;
+}
+
+.bitter-cont {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.color-cont {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .beerCardDetailsContainer {
@@ -215,6 +252,7 @@ h5 {
   border-radius: 5%;
 }
 
+
 .ingredients {
   margin-bottom: 1rem;
   overflow: auto;
@@ -270,6 +308,7 @@ h5 {
 
 .rightSide {
   width: 45%;
+
 }
 
 .foodPairing {
@@ -304,6 +343,7 @@ h5 {
 .btnCroix {
   display: flex;
   justify-content: flex-end;
+  cursor: pointer;
 }
 
 .btnCroixSVG {
@@ -314,6 +354,15 @@ h5 {
 .btn {
   display: inline-block;
   flex-direction: row;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+a,
+.btn {
+  text-decoration: none;
+  color: white;
 }
 
 .foodPairing button {
@@ -323,6 +372,7 @@ h5 {
 .buttonArrowFront {
   display: flex;
   justify-content: flex-end;
+  cursor: pointer;
 }
 
 .buttonArrowFrontSVG {
@@ -333,6 +383,7 @@ h5 {
 
 .buttonArrowBack {
   display: flex;
+  cursor: pointer;
 }
 
 .buttonArrowBackSVG {
