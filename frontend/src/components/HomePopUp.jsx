@@ -37,17 +37,18 @@ export default function HomePopUp({ onClose }) {
         <div className="PopUpContent">
           <h3>Welcome to Oh My Brew!</h3>
           <div className="PopUpAllParts">
-            <video width="100%" controls autoPlay muted>
+            <video width="100%" autoPlay muted loop>
               <source src={video} type="video/mp4" />
             </video>
             <div className="PopUpRightPart">
               <p>
-                To sort beer by preferences, you can use the 3 filters at your
-                disposal. you can filter your beers by alcohol degree,
-                bitterness and color. Click on the heart or the button "add to
-                favorites" to retrieve your beer on the main page. You can also
-                check ingredients and food pairing and ultimately print beer
-                recipes and brew your own beer! Happy brew!{" "}
+                To sort beers by preferences, you can use the 3 filters at your
+                disposal. You can filter your beers by alcohol degree,
+                bitterness and color. Click on the heart or the button "Add to
+                favorites" in order to save your favorite beers on the main
+                page. You can also check the ingredients, the food pairing and
+                save the brewing recipe to brew your own beer!{" "}
+                <span>Happy brew!</span>{" "}
               </p>
               <button onClick={onClose} type="button">
                 Start now!
