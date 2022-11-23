@@ -25,6 +25,7 @@
   box-shadow: var(--shadow-card);
   border-radius: 10px;
   transition: scale 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .beerCardSmall:hover {
@@ -292,6 +293,7 @@ h5 {
 .btnCroix {
   display: flex;
   justify-content: flex-end;
+  cursor: pointer;
 }
 
 .btnCroixSVG {
@@ -304,6 +306,7 @@ h5 {
   flex-direction: row;
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 a,
@@ -319,6 +322,7 @@ a,
 .buttonArrowFront {
   display: flex;
   justify-content: flex-end;
+  cursor: pointer;
 }
 
 .buttonArrowFrontSVG {
@@ -329,6 +333,7 @@ a,
 
 .buttonArrowBack {
   display: flex;
+  cursor: pointer;
 }
 
 .buttonArrowBackSVG {
