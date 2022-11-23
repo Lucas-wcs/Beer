@@ -1,0 +1,213 @@
+:root {
+  --background-color-light: #fff8e3;
+  --background-color-dark: #ffebaf;
+  --accent-color-1: #ff7e7c;
+  --accent-color-2: #f29f05;
+  --secondary-color-1: #bf5b04;
+  --secondary-color-2: #8c4820;
+  --secondary-color-3: #592c1c;
+  --secondary-color-4: #27140c;
+  --shadow-card: 4px 4px 20px rgba(242, 159, 5, 0.25);
+  --shadow-button: 4px 4px 20px rgba(191, 91, 4, 0.25);
+  --font-title-family: "Anton", sans-serif;
+  --font-text-family: "Cabin", sans-serif;
+  --font-text-weight-bold: 700;
+  --font-text-weight-regular: 400;
+}
+
+.recipeContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--background-color-dark);
+  border-radius: none;
+  padding: 4rem 4rem;
+  gap: 3rem;
+}
+
+.back-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--accent-color-2);
+  font-weight: var(--font-text-weight-bold);
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+}
+
+.back-home p {
+  color: var(--accent-color-2);
+  font-weight: var(--font-text-weight-bold);
+  transition: 0.3s;
+}
+
+.back-home path {
+  transition: 0.3s;
+}
+
+.back-home:hover path {
+  fill: var(--secondary-color-1);
+}
+
+.back-home:hover p {
+  color: var(--secondary-color-1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  padding-bottom: 2rem;
+  flex-wrap: no-wrap;
+  gap: 2rem;
+}
+
+.contentRecipe {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background-color: var(--background-color-light);
+}
+
+.contentRecipe p {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: var(--accent-color-2);
+}
+
+h3 {
+  text-align: center;
+}
+
+h3 span {
+  color: var(--accent-color-2);
+}
+
+.contentCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70rem;
+  height: auto;
+  background-color: white;
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-card);
+  padding: 4rem 4rem;
+  gap: 2rem;
+}
+
+.beerImage {
+  width: 13.125rem;
+  height: auto;
+}
+
+.part1 {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  gap: 2rem;
+  background-color: var(--background-color-light);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.part2,
+.part3,
+.partCaracteristics {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.partName {
+  color: var(--accent-color-2);
+}
+
+.partContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--background-color-light);
+  padding: 2rem;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+.partContentCaracteristics {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--background-color-dark);
+  padding: 2rem 2rem 0rem 2rem;
+  border-radius: 1rem;
+}
+
+.partContentIngredients {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--background-color-light);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.kettle {
+  display: flex;
+  justify-content: flex-end;
+  width: 8.56rem;
+  height: auto;
+  position: relative;
+  top: -1.5rem;
+  right: -1.5rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.columnIngredients {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.ingredientsTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.columnHops {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.hopsAdd {
+  font-style: italic;
+  color: var(--accent-color-2);
+  font-weight: 400;
+}
+
+.boldHeading {
+  font-weight: 700;
+}

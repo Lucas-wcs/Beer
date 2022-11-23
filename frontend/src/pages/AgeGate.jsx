@@ -2,7 +2,6 @@ import AdultButton from "@components/GateAge-component/adult-button";
 import Minorbutton from "@components/GateAge-component/minor-button";
 import React, { useState } from "react";
 import "../styles/AgeGate.css";
-import "../styles/AgeGate-button/AgeGate-button.css";
 import HomePage from "./HomePage";
 
 function AgeGate() {
@@ -73,12 +72,11 @@ function AgeGate() {
 
       <h1 className={!activeMinor ? "ageGate-title-off" : "ageGate-title-on"}>
         Are you{" "}
-        <h1 className={activeAdult && "sure"}>
-          <h1 className="sure2"> sure </h1>you're{" "}
-        </h1>
-        over 18 years old?
+        <span className={activeAdult && "sure"}>
+          <span className="sure2"> sure </span>you're{" "}
+        </span>
+        <span className="years">over 18 years old?</span>
       </h1>
-
       <div>
         {!activeMinor && (
           <img
