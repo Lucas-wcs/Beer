@@ -73,3 +73,47 @@
   background-color: white;
   transform: scale(110%);
 }
+
+/* =================== Mobile ==================== */
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .PopUp {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: white;
+    width: 20.9rem;
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .PopUpContent {
+    gap: 1.5rem;
+  }
+
+  .PopUpContent video {
+    width: 18rem;
+    height: 100%;
+  }
+
+  .PopUpAllParts {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .PopUpRightPart {
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  h3 {
+    line-height: 2.5rem;
+  }
+
+  .CloseIcon {
+    position: relative;
+    right: -0.5rem;
+    top: -0.5rem;
+  }
+}
