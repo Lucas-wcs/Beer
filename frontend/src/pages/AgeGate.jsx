@@ -77,7 +77,6 @@ function AgeGate() {
         </span>
         <span className="years">over 18 years old?</span>
       </h1>
-
       <div>
         {!activeMinor && (
           <img
