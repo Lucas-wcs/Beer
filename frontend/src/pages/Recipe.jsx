@@ -79,9 +79,8 @@ function Recipe() {
           <div className="part1">
             <div className="beerImage">
               <img
-                src={`${import.meta.env.VITE_BACKEND_URL}/api/beer/image/${
-                  binouze.imageUrl
-                }`}
+                src={`${import.meta.env.VITE_BACKEND_URL}/api/beer/image/${binouze.imageUrl
+                  }`}
                 alt="Beer"
               />
             </div>
@@ -134,7 +133,7 @@ function Recipe() {
           </div>
           <div className="part2">
             <h4 className="partName">Method</h4>
-            <div className="partContent">
+            <div className="partContentMethod">
               <p>
                 <span className="boldHeading">Mash temperature:</span>{" "}
                 {binouze.method.mashTemp.map((deg) => {
@@ -172,7 +171,7 @@ function Recipe() {
               </div>
 
               <div className="columnHops">
-                <div className="ingredtientTitle">
+                <div className="ingredientsTitle">
                   <img src={hopsIcon} alt="Hops Icon" />
                   <h4>Hops:</h4>
                 </div>
@@ -188,7 +187,7 @@ function Recipe() {
               </div>
 
               <div className="columnIngredients">
-                <div className="ingredtientTitle">
+                <div className="ingredientsTitle">
                   <img src={yeastIcon} alt="Yeast Icon" />
                   <h4>Yeast:</h4>
                 </div>

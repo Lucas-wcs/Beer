@@ -1,20 +1,3 @@
-:root {
-  --background-color-light: #fff8e3;
-  --background-color-dark: #ffebaf;
-  --accent-color-1: #ff7e7c;
-  --accent-color-2: #f29f05;
-  --secondary-color-1: #bf5b04;
-  --secondary-color-2: #8c4820;
-  --secondary-color-3: #592c1c;
-  --secondary-color-4: #27140c;
-  --shadow-card: 4px 4px 20px rgba(242, 159, 5, 0.25);
-  --shadow-button: 4px 4px 20px rgba(191, 91, 4, 0.25);
-  --font-title-family: "Anton", sans-serif;
-  --font-text-family: "Cabin", sans-serif;
-  --font-text-weight-bold: 700;
-  --font-text-weight-regular: 400;
-}
-
 .recipeContainer {
   display: flex;
   align-items: center;
@@ -145,21 +128,18 @@ h3 span {
   gap: 1rem;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .partContentCaracteristics {
   width: 100%;
   display: flex;
   justify-content: space-around;
   background-color: var(--background-color-dark);
   padding: 2rem 2rem 0rem 2rem;
-  border-radius: 1rem;
-}
-
-.partContentIngredients {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  background-color: var(--background-color-light);
-  padding: 2rem;
   border-radius: 1rem;
 }
 
@@ -173,10 +153,14 @@ h3 span {
   right: -1.5rem;
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
+.partContentIngredients,
+.partContentMethod {
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--background-color-light);
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
 .columnIngredients {
@@ -210,4 +194,92 @@ h3 span {
 
 .boldHeading {
   font-weight: 700;
+}
+
+
+/* ============================ Mobile ============================= */
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .recipeContainer {
+    padding: 2rem 2rem;
+    gap: 2rem;
+  }
+
+  .recipeContainer button {
+    display: none;
+  }
+
+  .contentCard {
+    width: 21rem;
+    padding: 1.25rem;
+    padding-top: 2.5rem;
+    gap: 1rem;
+  }
+
+  .contentRecipe {
+    padding: 0.5rem 1.25rem;
+  }
+
+  .beerImage {
+    width: 13.125rem;
+    height: auto;
+  }
+
+  .part1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .part2,
+  .part3,
+  .partCaracteristics .partContentMethod {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .partContentCaracteristics {
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .kettle {
+    width: 8.56rem;
+    height: auto;
+    position: relative;
+    right: -0.6rem;
+    top: -1rem;
+  }
+
+  .partContentIngredients,
+  .partContentMethod {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 1rem;
+    gap: 2rem;
+  }
+
+  .column {
+    align-items: center;
+  }
+
+  .columnIngredients {
+    align-items: center;
+    text-align: center;
+
+  }
+
+  .ingredientsTitle {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .columnHops {
+    align-items: center;
+  }
+
 }
