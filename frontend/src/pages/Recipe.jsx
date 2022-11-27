@@ -79,8 +79,9 @@ function Recipe() {
           <div className="part1">
             <div className="beerImage">
               <img
-                src={`${import.meta.env.VITE_BACKEND_URL}/api/beer/image/${binouze.imageUrl
-                  }`}
+                src={`${import.meta.env.VITE_BACKEND_URL}/api/beer/image/${
+                  binouze.imageUrl
+                }`}
                 alt="Beer"
               />
             </div>

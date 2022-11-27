@@ -196,7 +196,6 @@ h3 span {
   font-weight: 700;
 }
 
-
 /* ============================ Mobile ============================= */
 
 @media (min-width: 320px) and (max-width: 600px) {
@@ -270,7 +269,6 @@ h3 span {
   .columnIngredients {
     align-items: center;
     text-align: center;
-
   }
 
   .ingredientsTitle {
@@ -281,5 +279,4 @@ h3 span {
   .columnHops {
     align-items: center;
   }
-
 }
